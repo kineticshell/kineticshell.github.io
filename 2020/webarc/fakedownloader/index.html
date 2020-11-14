@@ -1,0 +1,425 @@
+<html><head>
+<meta charset="utf-8">
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<title>Fake downloader</title>
+
+
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+body{
+padding-top: 25px;
+overflow-x:hidden;
+margin:0; 
+height:100%; 
+font-family: 'Lato', sans-serif;
+
+background: rgb(30,87,153); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+
+
+}
+
+
+.div-body {
+	background-color: #f56800;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	min-height: 400px;
+	padding: 50px 0px;
+}
+
+
+.div-main {
+	width: 75%;
+	max-width: 800px; 
+	margin: 10px auto; 
+	padding: 0px 0px 5px 0px; 
+	background-color: #f9f9f9; 
+border-radius: 7px;
+}
+
+
+.div-header {
+	padding: 10px;
+	background-color: transparent; 
+}
+
+.p-title {
+	color: #000; 
+	font-size: 24px;
+}
+
+.p-desc {
+	font-size: 18px;
+	color: #000;
+}
+
+.p-footer {
+	color: #000;
+}
+
+
+/* customs */
+
+/* media q */
+
+@media screen and (max-width: 980px) {
+	.main {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+	.file-name {
+		font-size: 18px;
+	}
+	.file-size {
+		font-size: 23px;
+	}
+	.file-value {
+		font-size: 12px;
+	}
+	.dl_button {
+		font-size: 25px;
+	}
+	.content-hero {
+		font-size: 18px;
+	}
+	.section-text-hero {
+		font-size: 40px;
+	}
+	.section-text-zero {
+		font-size: 13px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+
+}
+@media screen and (max-width: 850px) {
+	.jumbotron-left {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	.jumbotron-right {
+		display: none;
+	}
+	.step-section {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-bottom: 25px;
+	}
+	.footer-left {
+		width: 100%;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.footer-right {
+		width: 100%;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.header {
+		padding-bottom: 15px;
+	}
+	.file-hero {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.steps-hero {
+		font-size: 25px;
+	}
+	.comment-hero {
+		font-size: 23px;
+	}
+	.commenter-name {
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.link_a {
+		font-size: 15px !important;
+	}
+	.commenter-comment {
+		font-size: 13px;
+	}
+	.comment-hero {
+		font-size: 20px;
+	}
+	.steps-hero {
+		font-size: 20px;
+	}
+	.content-hero {
+		font-size: 16px;
+		text-align: center;
+	}
+	.file-name {
+		font-size: 14px;
+	}
+	.file-size {
+		font-size: 20px;
+	}
+	.file-value {
+		font-size: 11px;
+	}
+	.file-text {
+		margin-top: 15px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.jumbotron-left {
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		width: 95%;
+	}
+.div-main {
+width:95%
+}
+body{
+padding-top: 50px;
+}
+#desc1{
+line-height: 15px;
+}
+
+}
+@media screen and (max-width: 450px) {
+	.jumbotron-left {
+		width: 95%;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+	}
+	.section-text-hero {
+		font-size: 30px;
+		margin-bottom: -7px;
+	}
+	.file-text {
+		margin-top: 0px;
+	}
+	.file-name {
+		font-size: 11px;
+	}
+	.file-size {
+		font-size: 15px;
+		margin-top: 0px;
+	}
+	.link_a img {
+		display: none;
+	}
+}
+.titulo{
+font-family: 'Kaushan Script', cursive;
+}
+.clear { 
+clear: both;
+}
+#bloco1{
+position:relative;
+}
+#leechbox{
+background-color:#fff;
+text-align:center;
+float:left;
+width:100%;
+padding:10px;
+    border-radius: 10px;
+	margin-top: 25px;
+	border: 2px dashed #000000;
+}
+</style>
+<style type="text/css" id="CPABUILDSettingsCSS">#CPABUILD_MODAL_CONTAINER #CPABUILDMODALCONTENT{animation-duration: 600ms;-webkit-transition: all 600ms;transition: all 600ms;transition-duration: 600ms;}</style></head>
+<body>
+<div class="container-fluid" style="width: 100%;">
+    <div class="row" style="width: 100%;">
+        <div id="div-main" class="div-main text-center">
+            <div id="div-header" class="div-header">
+                <span id="p-title" class="p-title">
+				<div style="text-align: center; font-weight: bold;">
+				<font style="font-size:30px;" class="titulo">I am a fake downloader</font><br>
+				<font style="font-size:15px;">Type anything here...</font>
+				</div>
+				</span>
+				<div id="bloco1">
+				<!-- <img src="/img/leech.png" style="border-radius:15px;margin-top: 15px;float:left;width: 40%;" />-->
+				<div id="leechbox">
+				<div id="c1">
+				Please type something below to trigger the animation:<br>
+				<div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">Link: </span>
+  <input type="text" id="username" class="form-control" placeholder="lmao" aria-describedby="sizing-addon1" style="border-color: rgb(213, 70, 70);">
+</div>
+
+<a href="#" class="btn btn-block btn-lg btn-success" onclick="sgen();"><span class="glyphicon glyphicon-ok-sign"></span> Play the animation</a>
+</div>
+<div id="c2" style="display:none;">
+<span id="texto1" style="font-size: 25px;"></span><br>
+<span id="texto2">...</span>
+</div>
+
+				
+				</div>
+				<div class="clear"> </div>
+				</div>
+            </div>
+
+            <div style="width: 80%; margin: 5px auto;">
+
+                <div class="alert alert-info">
+                    <span style="font-weight:bold;color:#000;">Server Nut Status:</span><br>
+					<b>Current nut version:</b> 1.0.1beta<br>
+					<b>Nuted date:</b> Feb 31, 2366<br>
+					<b>Latest nut success:</b> 140 billion years ago.<br>
+					<b>Status:</b> Nuting <img src="https://i.imgur.com/GgjoisC.png"><br>
+					<b>Server Nuts:</b> <span id="load" style="display: inline;">22</span>%
+                </div>
+
+            </div>
+            <div id="p-footer" class="p-footer" style="margin-top: 20px;padding:20px;font-size: 10px;">
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script>
+setInterval(function(){ 
+    var randm = Math.floor(Math.random() * 400) + 10;
+    $('#load').hide();  
+    $('#load').html(randm).fadeIn();
+    var randm = 0;
+}, 7000);
+function FakeComplete(){
+	alert("Surprise!"); window.location="https://en.meming.world/images/en/7/7f/Polish_Jerry.jpg"
+}
+function sgen(){
+var campovalue = document.getElementById("username").value;
+if ($('#username').val() == '' || campovalue.search('') == -1 ){
+    alert("Please insert something...");
+         $('#username').css('border-color', '#D54646');
+    }else{
+$('#c1').hide();
+$('#texto1').text('Connecting...');
+$('#c2').fadeIn();
+$('#c2').css('cursor','wait');
+window.setTimeout(function () {
+	$('#texto2').text('5%...');
+}, 100);
+window.setTimeout(function () {
+	$('#texto2').text('30%...');
+}, 350);
+window.setTimeout(function () {
+	$('#texto2').text('87%...');
+}, 400);
+window.setTimeout(function () {
+	$('#texto2').text('100%...');
+}, 520);
+window.setTimeout(function () {
+	$('#texto1').text('Getting queue position...');
+	$('#texto2').text('...');
+}, 750);
+window.setTimeout(function () {
+	$('#texto1').text('Your position is: 9996796');
+	$('#texto2').html("<img src='https://linkdebrideur.xyz/img/loading.gif' /> Please wait...");
+}, 950);
+window.setTimeout(function () {
+	$('#texto1').text('Your position is: 65467');
+	$('#texto2').html("<img src='https://linkdebrideur.xyz/img/loading.gif' /> Please wait...");
+}, 1050);
+window.setTimeout(function () {
+	$('#texto1').text('Your position is: 4546');
+	$('#texto2').html("<img src='https://linkdebrideur.xyz/img/loading.gif' /> Please wait...");
+}, 1850);
+window.setTimeout(function () {
+	$('#texto1').text('Your position is: 2363');
+	$('#texto2').html("<img src='https://linkdebrideur.xyz/img/loading.gif' /> Please wait...");
+}, 2050);
+window.setTimeout(function () {
+	$('#texto1').text('Your position is: 352');
+	$('#texto2').html("<img src='https://linkdebrideur.xyz/img/loading.gif' /> Please wait...");
+}, 2250);
+window.setTimeout(function () {
+	$('#texto1').text('Download started!');
+	$('#texto2').html("<img src='https://linkdebrideur.xyz/img/loading2.gif' /> Connecting to upstore...");
+}, 2650);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (7%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 2950);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (10%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 3250);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (23%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 3450);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (34%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 3850);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (47%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 4290);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (59%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 4400);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (67%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 4800);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (78%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 4900);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (90%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 5200);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (96%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 5320);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (99%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 5800);
+window.setTimeout(function () {
+	$('#texto1').text('Downloading to server...');
+	$('#texto2').html("Downloading (100%)<br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 5900);
+window.setTimeout(function () {
+	$('#texto1').text('Compressing file...');
+	$('#texto2').html("Compressing <img src='https://linkdebrideur.xyz/img/rar.gif' /><br><img src='https://linkdebrideur.xyz/img/loading2.gif' />");
+}, 6050);
+window.setTimeout(function () {
+$('#c2').css('cursor','default');
+	$('#texto1').hide();
+	$('#texto1').html("<img src='https://linkdebrideur.xyz/img/ok.png' /> Success!").fadeIn()
+	$('#texto2').html("Download ready!<br>Click button below to download your file:<br><a href='#' onclick='FakeComplete();' class='btn btn-lg btn-primary'><span class='glyphicon glyphicon-circle-arrow-down'></span> Download</a>");
+}, 7550);
+
+}
+}
+</script>
+
+
+</div></body></html>
