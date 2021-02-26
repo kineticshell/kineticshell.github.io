@@ -552,7 +552,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>先上效果图：<br><img src="https://i.loli.net/2020/08/07/HfgaoPYRqCX82NS.png" alt=""><br>之前逛r/unixporn的时候看到各种大佬秀自己炫酷的终端时候手痒痒想自己也整一个，于是自己搜了下教程，最后决定还是用最简单的编辑~/.bashrc的方法来添加启动文字</p>
+                <p>(2021-1-24更新）<br>其实也没那么复杂，只需要运行<br><code>sudo apt install neofetch</code><br>等待安装完成后在~/.bashrc里添加neofetch即可</p>
+<hr>
+<p>先上效果图：<br><img src="https://i.loli.net/2020/08/07/HfgaoPYRqCX82NS.png" alt=""><br>之前逛r/unixporn的时候看到各种大佬秀自己炫酷的终端时候手痒痒想自己也整一个，于是自己搜了下教程，最后决定还是用最简单的编辑~/.bashrc的方法来添加启动文字</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>.bashrc是一个Linux隐藏配置文件，位于/home/username目录下，作用就是在启动终端时执行其中的代码。将问候语用echo指令添加到此文件中即可实现启动问候语和ascii字符画</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>打开终端，输入<br><code>sudo gedit ~/.bashrc</code><br>如未安装gedit，也可以使用vim来编辑<br>然后在最后一行输入：<br><code>echo &#39;Welcome!&#39;</code><br>其中welcome可以替换成任意长度的字符。添加以后保存即可，再次打开新终端就会出现效果啦。如果没能出现效果或提示语法错误的话请检查是否输入有误。</p>
 <h2 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h2><p>附赠几个启动语：</p>
@@ -1510,20 +1512,6 @@ $(function () {
     <!-- Baidu Analytics -->
 
     <!-- Baidu Push -->
-
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
 
     
     <script src="/libs/others/clicklove.js" async="async"></script>
