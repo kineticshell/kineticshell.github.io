@@ -250,9 +250,24 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #1AC4FB 0%, #583CD0 100%);
+    background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171)) 0% 0% / 400% 400%;
+    animation: 15s ease 0s infinite normal none running gradient;
 }
 
+@keyframes gradient{
+0% {
+    background-position: 0% 50%;
+}
+
+50% {
+    background-position: 100% 50%;
+}
+
+100% {
+    background-position: 0% 50%;
+}
+
+}
 .text-color {
     color: #0f9d58 !important;
 }
