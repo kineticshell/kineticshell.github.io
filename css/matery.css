@@ -1,5 +1,6 @@
 /*全局基础样式*/
 /*小屏幕下(手机类)的样式*/
+@import url("/css/custom-fonts.css");
 @media only screen and (max-width: 601px) {
     .container {
         width: 95%;
@@ -37,6 +38,7 @@ body {
     background-color: #eaeaea;
     margin: 0;
     color: #5B5E50;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h1 {
@@ -44,6 +46,7 @@ h1 {
     font-size: 2.0rem;
     font-weight: bold;
     line-height: 2.0rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h2 {
@@ -51,6 +54,7 @@ h2 {
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 1.8rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h3 {
@@ -58,6 +62,7 @@ h3 {
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.7rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h4 {
@@ -65,6 +70,7 @@ h4 {
     font-size: 1.45rem;
     font-weight: bold;
     line-height: 1.45rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h5 {
@@ -72,23 +78,27 @@ h5 {
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.2rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h6 {
     margin: 22px 0 4px -4px;
     font-size: 1.1rem;
     line-height: 1.1rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 p {
     font-size: 1rem;
     line-height: 1.5rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 hr {
     margin: 20px 0;
     border: 0;
     border-top: 1px solid #ccc;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 blockquote {
@@ -137,7 +147,7 @@ pre {
 code {
     padding: 1px 5px;
     top: 13px !important;
-    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+    font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace !important;
     font-size: 0.91rem;
     color: #e96900;
     background-color: #f8f8f8;
@@ -293,6 +303,10 @@ mark {
     margin-top: -64px;
 }
 
+header{
+    font-family:'VonwaonBitmap 16px', sans-serif;
+}
+
 header .side-nav {
     width: 240px;
     z-index: 999;
@@ -372,6 +386,7 @@ header .side-nav .menu-list a {
     margin-left: 8px !important;
     font-size: 1.16rem;
     color: #34495e !important;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 header .side-nav .fa-fw {
@@ -565,6 +580,7 @@ header .go-back i {
     background-position: center center;
     background-size: cover;
     transform: translate3d(0px, 0px, 0px);
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 .index-cover {
@@ -717,11 +733,13 @@ header .go-back i {
 
 .carousel-post .title {
     font-size: 2.6rem;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 .dream {
     margin-top: 20px;
     margin-bottom: 40px;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 .dream .title,
@@ -890,18 +908,21 @@ header .go-back i {
 #articles {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 article a {
     margin-right: 0 !important;
     color: #525f7f;
     text-transform: none !important;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 article a:hover {
     font-weight: bold;
     color: #42b983;
     text-decoration: underline;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 .articles .row {
@@ -969,6 +990,7 @@ article .article-tags .chip {
     line-height: 22px;
     color: #fff;
     border-radius: 10px;
+    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 .prev-next {
