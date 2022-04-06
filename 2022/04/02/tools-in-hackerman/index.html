@@ -594,7 +594,31 @@
 <h3 id="物理骇入（撬锁）"><a href="#物理骇入（撬锁）" class="headerlink" title="物理骇入（撬锁）"></a>物理骇入（撬锁）</h3><p><img src="https://s2.loli.net/2022/04/05/vyxADK1bifCXG2l.png"><br>虽然“黑客攻击（物理）”通常被看作一个玩笑，但开锁技能在一些特定场合还是非常有用的。你可以在这里学到<a target="_blank" rel="noopener" href="https://zh.wikihow.com/%E7%94%A8%E5%9B%9E%E5%BD%A2%E9%92%88%E6%92%AC%E9%94%81">如何使用回形针撬锁</a>。</p>
 <h3 id="后渗透操作之摄像头偷窥"><a href="#后渗透操作之摄像头偷窥" class="headerlink" title="后渗透操作之摄像头偷窥"></a>后渗透操作之摄像头偷窥</h3><p><img src="https://s2.loli.net/2022/04/05/fMsBxuYNhK1QqRl.png"></p>
 <p>渣男男三被一张“音乐”CD狠狠坑了一把。攻击者查看的画面正是他通过CD感染渣男电脑后开启的摄像头流式传输页面。<a target="_blank" rel="noopener" href="https://www.hackers-arise.com/post/2018/10/16/metasploit-basics-part-15-post-exploitation-fun-web-cam-microphone-passwords-and-more">现实中的metasploit附带的meterpreter服务端也有同样的功能</a>，成功在宿主机执行后，它就可以在没有任何提示下静悄悄地开启摄像头并通过网页来进行流式传输，受害者的一切都会暴露在攻击者眼中。所以普通人为了保险起见，买个摄像头屏蔽盖还是非常有必要的。当然也不要随便把捡来的U盘&#x2F;CD插入你的电脑中。</p>
-<h2 id="S01E03"><a href="#S01E03" class="headerlink" title="S01E03"></a>S01E03</h2><p>未完待续</p>
+<h2 id="S01E03"><a href="#S01E03" class="headerlink" title="S01E03"></a>S01E03</h2><h3 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h3><p><img src="https://s2.loli.net/2022/04/06/njuF7XgKYdZa4Qy.png" alt="Tyrell正在试图暴力破解"></p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB">蛮力攻击（英语：Brute-force attack）</a>，是利用字典或设定好的程序&#x2F;脚本不断对加密数据尝试解密。暴力破解看似十分低效，但由于大部分人安全意识薄弱，密码设置得十分简单，8位以内纯数字字母组合密码在hashcat调用GPU算力的情况下不到一小时即可破解完毕。如果再加上前文提到的Eillot使用的那种社会工程学，暴力破解工具将成为黑客们手中的一把利器。暴力破解工具可参考前文提到的hashcat、hydra、john等。此外还有<a target="_blank" rel="noopener" href="https://github.com/rapid7/metasploit-framework">metasploit</a>自带的<a target="_blank" rel="noopener" href="https://github.com/ParrotSec/mimikatz">mimikatz</a>和kiwi。</p>
+<h3 id="Symantec-Endpoint-Protection"><a href="#Symantec-Endpoint-Protection" class="headerlink" title="Symantec Endpoint Protection"></a>Symantec Endpoint Protection</h3><p><img src="https://s2.loli.net/2022/04/06/C9NZhw6rMyPnUu3.png"></p>
+<p>Elliot受伤住院，特意选择了自己黑入过的这家医院来修改自己的血检报告来掩盖自己磕药的事实。截图里的杀软就是Symantec开发的用于企业安全的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B5%9B%E9%97%A8%E9%93%81%E5%85%8B%E7%AB%AF%E7%82%B9%E9%98%B2%E6%8A%A4">赛门铁克端点防护</a>。杀毒能力一流，但是遇到无法联网更新病毒库的医院内网环境。。。结果显而易见。</p>
+<p>附上一段Elliot的吐槽：</p>
+<p><img src="https://s2.loli.net/2022/04/06/ek8uszYQlOStfd5.png"></p>
+<p><img src="https://s2.loli.net/2022/04/06/EDCN2fBzGeT9pLr.png" alt="连夜攻关了杀毒软件在新版系统无法运行的问题.jpg"></p>
+<p>在国内的话大概就是<a target="_blank" rel="noopener" href="https://web.archive.org/web/20140523225319/http://news.sina.com.cn/o/2014-04-09/044929890835.shtml">Windows XP</a> + <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/329994668">IE</a> + <a target="_blank" rel="noopener" href="http://web.archive.org/web/20210115000612/https://mp.weixin.qq.com/s/4ICWRoIb6tki4JXmkswEyg">Flash Player</a>组合拳了吧（笑）</p>
+<h3 id="钓鱼攻击"><a href="#钓鱼攻击" class="headerlink" title="钓鱼攻击"></a>钓鱼攻击</h3><p><img src="https://s2.loli.net/2022/04/06/AnOTzNyLRehSd5o.png"></p>
+<p><img src="https://s2.loli.net/2022/04/06/uiMWsk5AUpIEzFq.png"></p>
+<p><img src="https://s2.loli.net/2022/04/06/ZTN8a7upwGUbOMK.png"></p>
+<p>建立一个临时的伪造网站，随后将伪造好的十分具有诱惑力的邮件发送到目标的邮箱中，等待目标上钩。这就是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%92%93%E9%B1%BC%E5%BC%8F%E6%94%BB%E5%87%BB">钓鱼攻击</a>。不能理解？还记得诸如“免费送Q币”、“免费送QQ黄钻会员”、“登陆qq邮箱以查看高清通知图”么？很蠢，但就是有大聪明上钩。（笑）</p>
+<h3 id="后门攻击"><a href="#后门攻击" class="headerlink" title="后门攻击"></a>后门攻击</h3><p><img src="https://s2.loli.net/2022/04/06/keE3KAN7uvHyfFd.png" alt="Tyrell正在试图通过后门黑入服务器"></p>
+<p>软件后门指绕过软件的安全性控制，从比较隐秘的通道获取对程序或系统访问权的黑客方法。（摘自<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%BE%8C%E9%96%80">维基百科</a>）<br>后门通常是开发商或程序员在编程时用于调试的隐藏指令或账户，通常拥有非常高的权限。一旦这些后门账户&#x2F;指令在最终发行版中忘记去除，将会造成非常严重的后果。比较著名的就是<a target="_blank" rel="noopener" href="https://web.archive.org/web/20201123214008/https://ipvm.com/reports/hik-exploit">海康威视的Magic String Backdoor</a>，只需在IP摄像头的地址栏加上一个</p>
+<pre class=" language-php"><code class="language-php">snapshot<span class="token operator">?</span>auth<span class="token operator">=</span>YWRtaW46MTEK
+</code></pre>
+<p>即可直接得到该摄像机的实时画面，随后该漏洞被进一步利用，甚至可以直接得到密码和管理权限。造成这一严重事故的直接原因就是海康威视的开发人员在V5.4.0build 160921版本的固件中忘记删除了开发者测试后门所导致的。</p>
+<h3 id="FramaRoot和SuperSU"><a href="#FramaRoot和SuperSU" class="headerlink" title="FramaRoot和SuperSU"></a>FramaRoot和SuperSU</h3><p><img src="https://s2.loli.net/2022/04/06/j2qybmWwH3sMReD.png"></p>
+<p>在成功get到对方服务器后门权限以后，Tyrell在对方的手机上安装了这么一款叫RooterFrame的app，功能似乎是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Root_(Android)">一键Root</a>。经查证这个工具虽然不存在，但它的原型是<a target="_blank" rel="noopener" href="https://framaroot-app.com/">FramaRoot</a>，类似于国外版的KingRoot。利用了Boromir Exploit、Gandalf exploit和Pippin Exploit等漏洞利用脚本来实现一键root。不过现在主要使用Magisk+TWRP的root方式，以上这些属于是Android2.3-4.4时代的眼泪了。</p>
+<p><img src="https://s2.loli.net/2022/04/06/QoiJbsmzxCvaI9k.png"></p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SuperSU">SuperSU</a>，Android2.3-4.4时代最出名的Root管理器，没什么好说的。我对它印象最深的就是它可以实时修改自己的APP图标。</p>
+<h3 id="抓包与Headers"><a href="#抓包与Headers" class="headerlink" title="抓包与Headers"></a>抓包与Headers</h3><p><img src="https://s2.loli.net/2022/04/06/jz84AvxcJrbF192.png"></p>
+<p>这段应该是抓包数据，这一行数据分别对应来源地址、时间戳、方法、协议、状态、对应端口和User-Agent</p>
+<h3 id="ipv6"><a href="#ipv6" class="headerlink" title="ipv6"></a>ipv6</h3><p><img src="https://s2.loli.net/2022/04/06/JhxEobW59gjnRXZ.png"></p>
+<p>监控渣男的网址是IPv6，这点细节真的赞。</p>
 <h2 id="S01E04"><a href="#S01E04" class="headerlink" title="S01E04"></a>S01E04</h2><p>未完待续</p>
 <h2 id="S01E05"><a href="#S01E05" class="headerlink" title="S01E05"></a>S01E05</h2><p>未完待续</p>
 <h2 id="S01E06"><a href="#S01E06" class="headerlink" title="S01E06"></a>S01E06</h2><p>未完待续</p>

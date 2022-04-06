@@ -5,12 +5,18 @@
     .container {
         width: 95%;
     }
+    body{
+        font-family:'VonwaonBitmap 16px', sans-serif;
+    }
 }
 
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
+    }
+    body{
+        font-family:'VonwaonBitmap 16px', sans-serif;
     }
 }
 
@@ -46,7 +52,6 @@ h1 {
     font-size: 2.0rem;
     font-weight: bold;
     line-height: 2.0rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
 }
 
 h2 {
@@ -54,7 +59,7 @@ h2 {
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 1.8rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 h3 {
@@ -62,7 +67,7 @@ h3 {
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1.7rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 h4 {
@@ -70,7 +75,7 @@ h4 {
     font-size: 1.45rem;
     font-weight: bold;
     line-height: 1.45rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 h5 {
@@ -78,14 +83,14 @@ h5 {
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1.2rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 h6 {
     margin: 22px 0 4px -4px;
     font-size: 1.1rem;
     line-height: 1.1rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 p {
@@ -98,7 +103,7 @@ hr {
     margin: 20px 0;
     border: 0;
     border-top: 1px solid #ccc;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 blockquote {
@@ -386,7 +391,7 @@ header .side-nav .menu-list a {
     margin-left: 8px !important;
     font-size: 1.16rem;
     color: #34495e !important;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 header .side-nav .fa-fw {
@@ -580,7 +585,7 @@ header .go-back i {
     background-position: center center;
     background-size: cover;
     transform: translate3d(0px, 0px, 0px);
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 .index-cover {
@@ -733,13 +738,13 @@ header .go-back i {
 
 .carousel-post .title {
     font-size: 2.6rem;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 .dream {
     margin-top: 20px;
     margin-bottom: 40px;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 .dream .title,
@@ -908,21 +913,21 @@ header .go-back i {
 #articles {
     margin-top: 10px;
     margin-bottom: 10px;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 article a {
     margin-right: 0 !important;
     color: #525f7f;
     text-transform: none !important;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 article a:hover {
     font-weight: bold;
     color: #42b983;
     text-decoration: underline;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 .articles .row {
@@ -990,7 +995,7 @@ article .article-tags .chip {
     line-height: 22px;
     color: #fff;
     border-radius: 10px;
-    font-family:'VonwaonBitmap 16px', sans-serif;
+
 }
 
 .prev-next {
