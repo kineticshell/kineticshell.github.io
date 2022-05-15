@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="盘点《黑客军团》第一季中出现的那些真实存在的工具软件, A Randint Day&#39;s Lab">
+    <meta name="keywords" content="数据结构学习笔记（更新中）, A Randint Day&#39;s Lab">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>盘点《黑客军团》第一季中出现的那些真实存在的工具软件 | A Randint Day&#39;s Lab</title>
+    <title>数据结构学习笔记（更新中） | A Randint Day&#39;s Lab</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -380,12 +380,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.loli.net/2022/04/02/9vbimzWhVEoqJ5L.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">盘点《黑客军团》第一季中出现的那些真实存在的工具软件</h1>
+                    <h1 class="description center-align post-title">数据结构学习笔记（更新中）</h1>
                 </div>
             </div>
         </div>
@@ -502,20 +502,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
                             </a>
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                                <span class="chip bg-color">网络安全</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                <span class="chip bg-color">数据结构</span>
                             </a>
                         
-                            <a href="/tags/%E9%BB%91%E5%AE%A2%E5%86%9B%E5%9B%A2/">
-                                <span class="chip bg-color">黑客军团</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">渗透工具</span>
+                            <a href="/tags/CS/">
+                                <span class="chip bg-color">CS</span>
                             </a>
                         
                     </div>
@@ -526,8 +522,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                杂谈
+                            <a href="/categories/%E5%B9%B2%E8%B4%A7/" class="post-category">
+                                干货
                             </a>
                         
                     </div>
@@ -539,7 +535,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-04-02
+                    2022-05-15
                 </div>
                 
 
@@ -556,93 +552,214 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="没什么用处的前言"><a href="#没什么用处的前言" class="headerlink" title="没什么用处的前言"></a>没什么用处的前言</h2><p><img src="https://s2.loli.net/2022/04/02/9vbimzWhVEoqJ5L.jpg" alt="Elliot镇楼"></p>
-<p>《黑客军团》（英文名：<del>Hackerman</del> Mr.Robot）算是在一众好莱坞版特效黑客里考据最准确的剧了，追这个剧的时候也见到了不少熟悉的面孔（指软件），所以打算边看剧同时边整理整理这个剧里出现的那些有意思的工具，就当是追剧笔记了（笑）。</p>
-<h2 id="S01E01"><a href="#S01E01" class="headerlink" title="S01E01"></a>S01E01</h2><h3 id="Tor"><a href="#Tor" class="headerlink" title="Tor"></a>Tor</h3><p>第一幕，我们的Elliot威慑餐馆老板<br><img src="https://s2.loli.net/2022/04/11/dwsmqzGnoaihlet.png"><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Tor">洋葱网络</a>，就是Tor，The Onion Router的缩写，是一种开源的匿名通信软件。其通过众多的中继服务器和加密来实现匿名性，但正如Eillot所说，Tor不能加密出口节点到目标服务器的流量，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Tor#%E5%87%BA%E5%8F%A3%E7%AF%80%E9%BB%9E%E7%9B%A3%E8%81%BD">控制出口网络节点的人就能完全掌握所有通信内容</a>，因此Eillot就凭借这个弱点搜集到了餐馆老板的全部通信数据。</p>
-<h3 id="GNOME-vs-KDE-Plasma"><a href="#GNOME-vs-KDE-Plasma" class="headerlink" title="GNOME vs KDE Plasma"></a>GNOME vs KDE Plasma</h3><p><img src="https://s2.loli.net/2022/04/02/mYK1dzwrHTtZS6v.png"><br><img src="https://s2.loli.net/2022/04/02/kDt1ITi9YfSaL7g.png"><br>两个Linux系统中比较知名的图形化桌面环境（Desktop Environment），<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/GNOME">GNOME</a>比较适合那些想要上手即用，追求高效的用户，KDE PLasma的插件和自定义参数很多，适合那些比较喜欢折腾的用户。<del><a target="_blank" rel="noopener" href="https://www.reddit.com/r/unixporn/">r&#x2F;Unixporn</a>老哥表示真折腾还得<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/i3">i3wm</a>&#x2F;<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/awesome">awesome</a>和<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/bspwm">bspwm</a></del></p>
-<p>不过这里有一点E公司小哥说的不太准确，KDE是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/KDE">KDE自由软件社群</a>的名字，而他们开发的桌面环境叫<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=KDE_Plasma_Workspaces">KDE Plasma</a>，所以应该称其为KDE Plasma。</p>
-<h3 id="RUDY攻击"><a href="#RUDY攻击" class="headerlink" title="RUDY攻击"></a>RUDY攻击</h3><p><img src="https://s2.loli.net/2022/04/03/5VU3cAYni8JOFjh.png"></p>
-<p>全称是aRe yoU Dead Yet?是一种DDoS（拒绝服务攻击）工具的名称，与一般的GET型DDoS攻击不同，它可以通过构建少量但持续的异常POST请求来对目标服务器进行瘫痪，通常针对那些带有表单的网站。这种攻击会在POST请求得到接受后不断发送非常少量的数据，长时间不终止传输会话，使得目标服务器的带宽被持续占用从而达到攻击目的。<a target="_blank" rel="noopener" href="https://www.cloudflare.com/zh-cn/learning/ddos/ddos-attack-tools/r-u-dead-yet-rudy/">阅读更多…</a></p>
-<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p><img src="https://s2.loli.net/2022/04/03/w9hrD2m67ksnL8T.png"><br>用<a target="_blank" rel="noopener" href="https://linuxcommand.org/lc3_man_pages/seth.html">set命令</a>修改Cisco服务器的waneth0口的IP地址，没什么好说的。</p>
-<h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p><img src="https://s2.loli.net/2022/04/03/Vm791dASgZHTjEP.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/More_(%E5%91%BD%E4%BB%A4)">more命令</a>：用于在终端将可能很大的文件以文本形式输出时的命令。不过我一般用cat。</p>
-<h3 id="ps和grep"><a href="#ps和grep" class="headerlink" title="ps和grep"></a>ps和grep</h3><p><img src="https://s2.loli.net/2022/04/03/DMLqcUXBiA2RbOh.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Ps_(Unix)">ps命令</a>：用于显示Linux中正在运行的服务和进程。</p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Grep">grep命令</a>：用于在输入中查找指定关键词并返回高亮结果，支持正则表达式。</p>
-<p><a target="_blank" rel="noopener" href="https://superuser.com/questions/756158/what-does-the-linux-pipe-symbol-do">pipe传递符命令</a>：即<code>|</code>，用于将其前面命令的输出作为输入传递给下一个命令。<br>此处Elliot命令的意思是查找所有以root身份运行的进程和服务。</p>
-<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><p><img src="https://s2.loli.net/2022/04/03/IUhjMS1wGypL9E7.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Chmod">chmod命令</a>：用于修改文件的权限，这里Elliot的命令是使用八进制权限模式将文件设置为只有所有者才能读写的权限。</p>
-<h3 id="剧组自创命令"><a href="#剧组自创命令" class="headerlink" title="剧组自创命令"></a>剧组自创命令</h3><p><img src="https://s2.loli.net/2022/04/03/qUM168fwKazS2P5.png"></p>
-<p><img src="https://s2.loli.net/2022/04/03/5WcYBGx7OytgQui.png"></p>
-<p>astsu这个没有现实原型，推测可能是Evil Corp内部使用的CLI服务器管理程序。</p>
-<p>elpscrk这个也没有现实原型，但看起来应该就是一个密码爆破工具，有点像<a target="_blank" rel="noopener" href="https://github.com/vanhauser-thc/thc-hydra">Hydra</a>和<a target="_blank" rel="noopener" href="https://github.com/hashcat/hashcat">Hashcat</a>。</p>
-<h3 id="社会工程学"><a href="#社会工程学" class="headerlink" title="社会工程学"></a>社会工程学</h3><p><img src="https://s2.loli.net/2022/04/03/WqNYXKj1lxwhoiP.png"></p>
-<p><img src="https://s2.loli.net/2022/04/03/esWl68mpr2hSDTn.png"></p>
-<p>这段是我认为第一集里最精彩的部分。Elliot发现这个目标使用了假名，且几乎查不到与之相关联的社交网络账户，于是他通过心理咨询师与目标约会的机会骗到了目标的手机，发现了其中的Bank of E，得知目标拥有一个Bank of E的账户。随后他就使用伪造的号码假扮Bank of E工作人员以帐号被入侵为由询问目标的敏感信息和密保问题，最后成功得到了目标的正确密码，简直是<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/The_Art_of_Deception">米特尼克《欺骗的艺术》</a>的完美示范。</p>
-<h2 id="S01E02"><a href="#S01E02" class="headerlink" title="S01E02"></a>S01E02</h2><h3 id="Shellshock"><a href="#Shellshock" class="headerlink" title="Shellshock"></a>Shellshock</h3><p><img src="https://s2.loli.net/2022/04/05/YF3u5Ecf4RgmzMQ.png"></p>
-<p>Shellshock，正如字幕组科普，是在Unix-like系统中普遍采用的shell程序<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">“bash”</a>中的一个参数解析漏洞，攻击者可以构造不合法的请求来实现远程执行任意代码。代号<a target="_blank" rel="noopener" href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=cve-2014-6271">CVE-2014-6271</a>，感兴趣的朋友可以下载这个<a target="_blank" rel="noopener" href="https://github.com/opsxcq/exploit-CVE-2014-6271">github上的docker镜像</a>来自己体验一番。</p>
-<h3 id="wget、非法UA与RCE"><a href="#wget、非法UA与RCE" class="headerlink" title="wget、非法UA与RCE"></a>wget、非法UA与RCE</h3><p><img src="https://s2.loli.net/2022/04/05/7NdTDYmBWuIxz8L.png"></p>
-<p>Elliot使用wget指令对上述漏洞的利用。代码如下（网址部分已省略）</p>
-<pre class=" language-shell"><code class="language-shell">wget -U "() &#123; test;&#125;; echo \"Content-type: text/plain"; echo; echo; /bin/cat /etc/passwd" http://ur.mom
-</code></pre>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Wget">wget</a>是GNU里的一个下载器，参数<code>-U</code>是用于构建自定义的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%94%A8%E6%88%B7%E4%BB%A3%E7%90%86">User-Agent</a>。这里Elliot输入的这些奇怪的字符就是为了利用这个漏洞，使其无法被邮件服务器作为文本正常解析，从而让后面的<code>/bin/cat /etc/passwd</code>命令得到调用。不过根据github上的poc命令来看这里Elliot似乎在test和分号之间少打了个冒号。随后Elliot成功把目标服务器上的<code>/etc/passwd</code>作为status文件存到了本地，并使用cat指令进行了查看，得到了目标服务器上的账户信息。关于两步验证这段也是个有意思的吐槽，是的，两步验证也许在日常使用时有些麻烦，但它在数据库泄露事件发生时真的可以救你账户一命。</p>
-<h3 id="John"><a href="#John" class="headerlink" title="John"></a>John</h3><p><img src="https://s2.loli.net/2022/04/05/CraJUXy6PHfv72z.png"><br><img src="https://s2.loli.net/2022/04/05/cxCkKyV2LW96FTs.png"></p>
-<p>Elliot用<a target="_blank" rel="noopener" href="https://github.com/openwall/john">John the ripper jumbo</a>工具搭配他的字典来跑hash从而试图得到Tyrell的密码。<br>不过这段有两个槽点，可能是剧组考虑不周。<br>第一点：Elliot的命令是</p>
-<pre class=" language-shell"><code class="language-shell">root@elliot:~#./john /etc/status
-</code></pre>
-<p>可是这个status并不是他刚刚用wget指令下载下来的status文件，结合终端的<code>~</code>来看Elliot下载的status文件应该是保存在&#x2F;root目录才对。而且即使那个status是Elliot提前下载好的hash密钥文件他把这文件放到自己系统的&#x2F;etc目录下也很奇怪。<br>第二点：Linux系统中&#x2F;etc&#x2F;passwd并不包含真正的密码hash值，其中储存的是这台服务器的用户列表信息。真正的密码hash文件则存放在&#x2F;etc&#x2F;shadow中。这里Elliot只下载了目标服务器的passwd文件并命名为status却并没有下载shadow文件以及用john试图破解的文件也叫status我怀疑也是剧组的疏漏，错把passwd当成储存密钥的文件了。</p>
-<h3 id="物理骇入（撬锁）"><a href="#物理骇入（撬锁）" class="headerlink" title="物理骇入（撬锁）"></a>物理骇入（撬锁）</h3><p><img src="https://s2.loli.net/2022/04/05/vyxADK1bifCXG2l.png"><br>虽然“黑客攻击（物理）”通常被看作一个玩笑，但开锁技能在一些特定场合还是非常有用的。你可以在这里学到<a target="_blank" rel="noopener" href="https://zh.wikihow.com/%E7%94%A8%E5%9B%9E%E5%BD%A2%E9%92%88%E6%92%AC%E9%94%81">如何使用回形针撬锁</a>。</p>
-<h3 id="后渗透操作之摄像头偷窥"><a href="#后渗透操作之摄像头偷窥" class="headerlink" title="后渗透操作之摄像头偷窥"></a>后渗透操作之摄像头偷窥</h3><p><img src="https://s2.loli.net/2022/04/05/fMsBxuYNhK1QqRl.png"></p>
-<p>渣男男三被一张“音乐”CD狠狠坑了一把。攻击者查看的画面正是他通过CD感染渣男电脑后开启的摄像头流式传输页面。<a target="_blank" rel="noopener" href="https://www.hackers-arise.com/post/2018/10/16/metasploit-basics-part-15-post-exploitation-fun-web-cam-microphone-passwords-and-more">现实中的metasploit附带的meterpreter服务端也有同样的功能</a>，成功在宿主机执行后，它就可以在没有任何提示下静悄悄地开启摄像头并通过网页来进行流式传输，受害者的一切都会暴露在攻击者眼中。所以普通人为了保险起见，买个摄像头屏蔽盖还是非常有必要的。当然也不要随便把捡来的U盘&#x2F;CD插入你的电脑中。</p>
-<h2 id="S01E03"><a href="#S01E03" class="headerlink" title="S01E03"></a>S01E03</h2><h3 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h3><p><img src="https://s2.loli.net/2022/04/06/njuF7XgKYdZa4Qy.png" alt="Tyrell正在试图暴力破解"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%9B%AE%E5%8A%9B%E6%94%BB%E5%87%BB">蛮力攻击（英语：Brute-force attack）</a>，是利用字典或设定好的程序&#x2F;脚本不断对加密数据尝试解密。暴力破解看似十分低效，但由于大部分人安全意识薄弱，密码设置得十分简单，8位以内纯数字字母组合密码在hashcat调用GPU算力的情况下不到一小时即可破解完毕。如果再加上前文提到的Eillot使用的那种社会工程学，暴力破解工具将成为黑客们手中的一把利器。暴力破解工具可参考前文提到的hashcat、hydra、john等。此外还有<a target="_blank" rel="noopener" href="https://github.com/rapid7/metasploit-framework">metasploit</a>自带的<a target="_blank" rel="noopener" href="https://github.com/ParrotSec/mimikatz">mimikatz</a>和kiwi。</p>
-<h3 id="Symantec-Endpoint-Protection"><a href="#Symantec-Endpoint-Protection" class="headerlink" title="Symantec Endpoint Protection"></a>Symantec Endpoint Protection</h3><p><img src="https://s2.loli.net/2022/04/06/C9NZhw6rMyPnUu3.png"></p>
-<p>Elliot受伤住院，特意选择了自己黑入过的这家医院来修改自己的血检报告来掩盖自己磕药的事实。截图里的杀软就是Symantec开发的用于企业安全的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B5%9B%E9%97%A8%E9%93%81%E5%85%8B%E7%AB%AF%E7%82%B9%E9%98%B2%E6%8A%A4">赛门铁克端点防护</a>。杀毒能力一流，但是遇到无法联网更新病毒库的医院内网环境。。。结果显而易见。</p>
-<p>附上一段Elliot的吐槽：</p>
-<p><img src="https://s2.loli.net/2022/04/06/ek8uszYQlOStfd5.png"></p>
-<p><img src="https://s2.loli.net/2022/04/06/EDCN2fBzGeT9pLr.png" alt="连夜攻关了杀毒软件在新版系统无法运行的问题.jpg"></p>
-<p>在国内的话大概就是<a target="_blank" rel="noopener" href="https://web.archive.org/web/20140523225319/http://news.sina.com.cn/o/2014-04-09/044929890835.shtml">Windows XP</a> + <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/329994668">IE</a> + <a target="_blank" rel="noopener" href="http://web.archive.org/web/20210115000612/https://mp.weixin.qq.com/s/4ICWRoIb6tki4JXmkswEyg">Flash Player</a>组合拳了吧（笑）</p>
-<h3 id="钓鱼攻击"><a href="#钓鱼攻击" class="headerlink" title="钓鱼攻击"></a>钓鱼攻击</h3><p><img src="https://s2.loli.net/2022/04/06/AnOTzNyLRehSd5o.png"></p>
-<p><img src="https://s2.loli.net/2022/04/06/uiMWsk5AUpIEzFq.png"></p>
-<p><img src="https://s2.loli.net/2022/04/06/ZTN8a7upwGUbOMK.png"></p>
-<p>建立一个临时的伪造网站，随后将伪造好的十分具有诱惑力的邮件发送到目标的邮箱中，等待目标上钩。这就是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%92%93%E9%B1%BC%E5%BC%8F%E6%94%BB%E5%87%BB">钓鱼攻击</a>。不能理解？还记得诸如“免费送Q币”、“免费送QQ黄钻会员”、“登陆qq邮箱以查看高清通知图”么？很蠢，但就是有大聪明上钩。（笑）</p>
-<h3 id="后门攻击"><a href="#后门攻击" class="headerlink" title="后门攻击"></a>后门攻击</h3><p><img src="https://s2.loli.net/2022/04/06/keE3KAN7uvHyfFd.png" alt="Tyrell正在试图通过后门黑入服务器"></p>
-<p>软件后门指绕过软件的安全性控制，从比较隐秘的通道获取对程序或系统访问权的黑客方法。（摘自<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%BE%8C%E9%96%80">维基百科</a>）<br>后门通常是开发商或程序员在编程时用于调试的隐藏指令或账户，通常拥有非常高的权限。一旦这些后门账户&#x2F;指令在最终发行版中忘记去除，将会造成非常严重的后果。比较著名的就是<a target="_blank" rel="noopener" href="https://web.archive.org/web/20201123214008/https://ipvm.com/reports/hik-exploit">海康威视的Magic String Backdoor</a>，只需在IP摄像头的地址栏加上一个</p>
-<pre class=" language-php"><code class="language-php">snapshot<span class="token operator">?</span>auth<span class="token operator">=</span>YWRtaW46MTEK
-</code></pre>
-<p>即可直接得到该摄像机的实时画面，随后该漏洞被进一步利用，甚至可以直接得到密码和管理权限。造成这一严重事故的直接原因就是海康威视的开发人员在V5.4.0build 160921版本的固件中忘记删除了开发者测试后门所导致的。</p>
-<h3 id="FramaRoot和SuperSU"><a href="#FramaRoot和SuperSU" class="headerlink" title="FramaRoot和SuperSU"></a>FramaRoot和SuperSU</h3><p><img src="https://s2.loli.net/2022/04/06/j2qybmWwH3sMReD.png"></p>
-<p>在成功get到对方服务器后门权限以后，Tyrell在对方的手机上安装了这么一款叫RooterFrame的app，功能似乎是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Root_(Android)">一键Root</a>。经查证这个工具虽然不存在，但它的原型是<a target="_blank" rel="noopener" href="https://framaroot-app.com/">FramaRoot</a>，类似于国外版的KingRoot。利用了Boromir Exploit、Gandalf exploit和Pippin Exploit等漏洞利用脚本来实现一键root。不过现在主要使用Magisk+TWRP的root方式，以上这些属于是Android2.3-4.4时代的眼泪了。</p>
-<p><img src="https://s2.loli.net/2022/04/06/QoiJbsmzxCvaI9k.png"></p>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/SuperSU">SuperSU</a>，Android2.3-4.4时代最出名的Root管理器，没什么好说的。我对它印象最深的就是它可以实时修改自己的APP图标。</p>
-<h3 id="抓包与Headers"><a href="#抓包与Headers" class="headerlink" title="抓包与Headers"></a>抓包与Headers</h3><p><img src="https://s2.loli.net/2022/04/06/jz84AvxcJrbF192.png"></p>
-<p>这段应该是抓包数据，这一行数据分别对应来源地址、时间戳、方法、协议、状态、对应端口和User-Agent</p>
-<h3 id="ipv6"><a href="#ipv6" class="headerlink" title="ipv6"></a>ipv6</h3><p><img src="https://s2.loli.net/2022/04/06/JhxEobW59gjnRXZ.png"></p>
-<p>监控渣男的网址是IPv6，这点细节真的赞。</p>
-<h2 id="S01E04"><a href="#S01E04" class="headerlink" title="S01E04"></a>S01E04</h2><h3 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h3><p><img src="https://s2.loli.net/2022/04/11/a4dWliTKDEhcjYO.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%91%E8%8E%93%E6%B4%BE">树莓派</a>是一种起初被用作教育目的的开源卡片型电脑，采用arm架构的CPU。后来因为其不错的性能，丰富的拓展，完善的接口和可运行Linux发行版使得它在极客和DIY爱好者们中受到极大欢迎，许多人用它来制作各种智能家居的主控系统，智能音箱，“魔镜”等实用或奇妙的小工具。当然也包括像Elliot这样的信息安全人员用它来当作便携式信息安全测试工作站。</p>
-<h3 id="虚拟专用网络"><a href="#虚拟专用网络" class="headerlink" title="虚拟专用网络"></a>虚拟专用网络</h3><p><img src="https://s2.loli.net/2022/04/11/JyqwNCnrRBOtQMI.png"></p>
-<p>俗称<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8">代理</a>或<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E7%A7%81%E4%BA%BA%E7%B6%B2%E8%B7%AF">VPN</a>，指用户通过一台远程服务器作为中转来代替自己的电脑发出请求。因为它高度的匿名性，因此许多人用它来避免广告跟踪与内容审查。此外，它还可以作为一种访问未公开局域网的手段：用户将一台同时可以访问内网和互联网的服务器上部署VPN服务，用户即可通过此服务器来获取内网访问权限。这也正是Elliot打算做的。</p>
-<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><p><img src="https://s2.loli.net/2022/04/11/BMPN5eoh7uU2ZGC.png"><br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">FTP</a>，全称File Transfer Protocol，是一种专用于文件传输的网络协议。优点是简单便捷，缺点是明文传输，无加密，极易遭到中间人攻击导致传输内容被泄露。<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/SSH%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">sftp</a>这种基于ssh的文件传输协议正在逐步取代ftp。</p>
-<h3 id="Odb2设备与CAN-Bus"><a href="#Odb2设备与CAN-Bus" class="headerlink" title="Odb2设备与CAN Bus"></a>Odb2设备与CAN Bus</h3><p><img src="https://s2.loli.net/2022/04/11/F9zPHXMQpLbry4D.png"><br><img src="https://s2.loli.net/2022/04/11/ojLCEQgnVse2hvF.png"></p>
-<p>这段我实在不熟，根据<a target="_blank" rel="noopener" href="https://www.reddit.com/r/MrRobot/comments/3dpynj/another_realistic_hack_detail_from_s01e04/">一篇reddit帖子</a>的分析其应该是利用专用的嗅探器嗅探了<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%99%A8%E5%8D%80%E5%9F%9F%E7%B6%B2%E8%B7%AF">汽车内的控制器局域网</a>，抓到了开锁时的握手包，对其解密后成功打开了汽车的锁。（以后如果对此领域有涉足将会补充）</p>
-<h3 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h3><p><img src="https://s2.loli.net/2022/04/11/5zq7ecrGE19pOsW.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-sg/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B">守护进程</a>，英文名是daemon,源于守护天使的英文。是一种在后台持续运行的服务程序，名称通常以字母“d”结尾，通常用于对某个进程保活。字幕组翻译成后台进程其实有些不太准确，守护进程是后台进程的一种，定义范围更加狭窄。</p>
-<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p><img src="https://s2.loli.net/2022/04/11/RCIwFrlKZ1bNnqx.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Tar">tar</a>是一种Unix-like系统自带的纯命令行打包工具，与winrar类似。唯一的区别在于其打包后的后缀名为*.tgz或*.tar.gz。tar的用法可见此：<a target="_blank" rel="noopener" href="https://www.commandlinux.com/man-page/man1/tar.1.html">tar man page</a></p>
-<h3 id="FileZilla"><a href="#FileZilla" class="headerlink" title="FileZilla"></a>FileZilla</h3><p><img src="https://s2.loli.net/2022/04/11/e7JNBMvKb5gtfFR.png"></p>
-<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/FileZilla">FileZilla</a>是一款开源的GUI文件传输客户端，支持ftp，sftp以及ipfs协议。我个人就经常用它来在我的电脑和手机之间互传文件，所以当这个镜头出现时我马上认出了这个工具。</p>
-<p>Arch系Linux发行版可以直接通过</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pacman -Syu filezilla
-</code></pre>
-<p>安装。</p>
-<h2 id="S01E05"><a href="#S01E05" class="headerlink" title="S01E05"></a>S01E05</h2><p>未完待续</p>
-<h2 id="S01E06"><a href="#S01E06" class="headerlink" title="S01E06"></a>S01E06</h2><p>未完待续</p>
-<h2 id="S01E07"><a href="#S01E07" class="headerlink" title="S01E07"></a>S01E07</h2><p>未完待续</p>
-<h2 id="S01E08"><a href="#S01E08" class="headerlink" title="S01E08"></a>S01E08</h2><p>未完待续</p>
-<h2 id="S01E09"><a href="#S01E09" class="headerlink" title="S01E09"></a>S01E09</h2><p>未完待续</p>
-<h2 id="S01E010"><a href="#S01E010" class="headerlink" title="S01E010"></a>S01E010</h2><p>未完待续</p>
-
+                <h2 id="第一章：绪论"><a href="#第一章：绪论" class="headerlink" title="第一章：绪论"></a>第一章：绪论</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>相互之间存在一种或多种特定关系的数据元素的集合</p>
+<h3 id="计算机解决具体问题的步骤"><a href="#计算机解决具体问题的步骤" class="headerlink" title="计算机解决具体问题的步骤"></a>计算机解决具体问题的步骤</h3><ul>
+<li>首先从具体问题抽象出一个数学模型</li>
+<li>设计一个解此问题的算法</li>
+<li>编程序、进行测试，调整直至得到最终解答</li>
+</ul>
+<h3 id="数学模型的分类"><a href="#数学模型的分类" class="headerlink" title="数学模型的分类"></a>数学模型的分类</h3><ul>
+<li>数值计算类</li>
+<li>非数据计算类<ul>
+<li>树结构</li>
+<li>线性结构</li>
+<li>图结构</li>
+</ul>
+</li>
+</ul>
+<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><h4 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h4><ul>
+<li><p>所有能输入到计算机中并能被计算机程序加工、处理的符号的总称</p>
+</li>
+<li><p>如整数、实数、字符、声音、图像、图形等</p>
+</li>
+</ul>
+<h4 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h4><ul>
+<li><p>数据的基本单位</p>
+</li>
+<li><p>在计算机中作为一个整体进行考虑和处理</p>
+</li>
+</ul>
+<h4 id="数据项"><a href="#数据项" class="headerlink" title="数据项"></a>数据项</h4><ul>
+<li><p>数据不可分割的最小单位</p>
+</li>
+<li><p>一个数据元素可以由多个数据项组成</p>
+</li>
+<li><p>如姓名、年龄等</p>
+</li>
+</ul>
+<h4 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h4><ul>
+<li><p>由性质相同（类型相同）的数据元素组成的集合</p>
+</li>
+<li><p>数据对象是数据的一个子集</p>
+</li>
+<li><p>由4个整数组成的数据对象</p>
+<ul>
+<li><code>D1=&#123;20, -30, 88， 45&#125;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ul>
+<li><p>相互之间存在一种或多种特定关系的数据元素的集合</p>
+</li>
+<li><p>数据元素之间的关系称为结构</p>
+</li>
+<li><p>四类基本结构</p>
+<ul>
+<li>集合</li>
+<li>线性结构</li>
+<li>树形结构</li>
+<li>图状结构</li>
+</ul>
+</li>
+<li><p>按逻辑结构分类</p>
+<ul>
+<li>线性结构<ul>
+<li>线性表</li>
+<li>栈</li>
+<li>队列</li>
+<li>数组</li>
+<li>广义表</li>
+<li>字符串</li>
+</ul>
+</li>
+<li>非线性结构<ul>
+<li>树和二叉树</li>
+<li>图</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据的存储结构"><a href="#数据的存储结构" class="headerlink" title="数据的存储结构"></a>数据的存储结构</h4><ul>
+<li><p>数据在计算机存储器中的映像</p>
+</li>
+<li><p>也被称为存储表示、物理结构、物理表示</p>
+</li>
+<li><p>分类</p>
+<ul>
+<li>顺序存储结构（向量、一维数组）</li>
+<li>非顺序存储结构（单链表：分配不一定连续的空间）</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ul>
+<li>一个值的集合和定义在这个值上的一组操作的总称<ul>
+<li>原子类型（int, char, float等）</li>
+<li>结构类型（线性表、数组、树等）</li>
+</ul>
+</li>
+</ul>
+<h4 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h4><ul>
+<li><p>是指一个数学模型以及定义在该模型上的一组操作，它是对数据结构逻辑上的定义，与计算机的实现无关</p>
+</li>
+<li><p>抽象数据类型可以用一个三元组表示：（D，S，P）</p>
+<ul>
+<li>D表示数据对象</li>
+<li>S是D中数据元素之间的关系集</li>
+<li>P是对D中数据元素的基本操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="算法的基本特征"><a href="#算法的基本特征" class="headerlink" title="算法的基本特征"></a>算法的基本特征</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>算法是对特定问题求解步骤的一中描述，还不是程序</p>
+<h4 id="五个特征"><a href="#五个特征" class="headerlink" title="五个特征"></a>五个特征</h4><ul>
+<li>有穷性：在有限步骤&#x2F;时间后终止</li>
+<li>确定性：每条指令&#x2F;步骤都没有二义性，具有明确含义</li>
+<li>可行性：算法中的操作都是已经实现的基本运算执行有限次来实现的</li>
+<li>输入：有0或多个输入量</li>
+<li>输出：有至少一个输出量</li>
+</ul>
+<h4 id="算法设计要求"><a href="#算法设计要求" class="headerlink" title="算法设计要求"></a>算法设计要求</h4><ul>
+<li><p>正确性</p>
+<ul>
+<li>无语法错误</li>
+<li>对n组输入产生正确结果</li>
+<li>对特殊输入产生正确结果</li>
+<li>对所有输入产生正确结果</li>
+</ul>
+</li>
+<li><p>可读性</p>
+<ul>
+<li>算法主要是为了人的阅读与交流</li>
+</ul>
+</li>
+<li><p>健壮性</p>
+<ul>
+<li>不同的输入都要有相应的反应</li>
+</ul>
+</li>
+<li><p>高效与低存储量</p>
+<ul>
+<li>时间复杂度</li>
+<li>空间复杂度</li>
+</ul>
+</li>
+</ul>
+<h4 id="算法的描述工具"><a href="#算法的描述工具" class="headerlink" title="算法的描述工具"></a>算法的描述工具</h4><ul>
+<li>自然语言</li>
+<li>程序设计语言</li>
+<li>流程图</li>
+<li>伪代码</li>
+<li>类C语言</li>
+</ul>
+<h4 id="算法的主体"><a href="#算法的主体" class="headerlink" title="算法的主体"></a>算法的主体</h4><ul>
+<li>函数<ul>
+<li>用于表示算法</li>
+</ul>
+</li>
+</ul>
+<h3 id="算法分析的相关标准"><a href="#算法分析的相关标准" class="headerlink" title="算法分析的相关标准"></a>算法分析的相关标准</h3><h4 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h4><h5 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h5><p>算法&#x2F;程序中基本操作&#x2F;语句重复执行的次数的总和</p>
+<h5 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h5><p>设n为求解<strong>问题的规模</strong>，基本操作&#x2F;语句的执行次数总和称为<strong>语句频度</strong>，记作**f(n)**。</p>
+<p>执行下面的步骤：</p>
+<ul>
+<li>去掉f(n)中所有加法常数</li>
+<li>只保留最高阶项</li>
+</ul>
+<p>**时间复杂度记作T(n)**，T(n)&#x3D;O(f(n))。</p>
+<h2 id="第二章：线性表"><a href="#第二章：线性表" class="headerlink" title="第二章：线性表"></a>第二章：线性表</h2><h3 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h3><h4 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h4><ul>
+<li>由n(n&gt;&#x3D;0)个数据元素组成的有限序列。</li>
+</ul>
+<p>对于L&#x3D;(a1, a2, …, ai-1, a1, ai+1, …, an)</p>
+<ul>
+<li>ai-1在ai之前，是ai的直接前驱</li>
+<li>ai+1在ai之后，是ai的直接后继</li>
+<li>a1没有前驱</li>
+<li>an没有后继</li>
+<li>ai(1&lt;i&lt;n)有且仅有一个直接前驱和直接后驱</li>
+</ul>
+<h4 id="线性表的基本操作"><a href="#线性表的基本操作" class="headerlink" title="线性表的基本操作"></a>线性表的基本操作</h4><ul>
+<li>删除</li>
+<li>插入</li>
+<li>排序</li>
+<li>查找</li>
+<li>查找并删除</li>
+<li>合并</li>
+<li>复制</li>
+</ul>
+<h3 id="线性表的存储结构"><a href="#线性表的存储结构" class="headerlink" title="线性表的存储结构"></a>线性表的存储结构</h3><h4 id="顺序分配"><a href="#顺序分配" class="headerlink" title="顺序分配"></a>顺序分配</h4><p>在内存中是紧挨着存储的，使用的是连续的存储空间。</p>
+<p>在定义时需定义长度或元素位置，取其一即可。</p>
+<p>元素所占的空间和表长可以合并为C语言中的一个结构类型。</p>
+<p>超出定义好的分配空间会导致溢出。</p>
+<h4 id="动态分配"><a href="#动态分配" class="headerlink" title="动态分配"></a>动态分配</h4><p>当超出容量时，分配更大的空间存储。引入指针的概念来实现此效果。</p>
+<h4 id="在顺序表中插入元素"><a href="#在顺序表中插入元素" class="headerlink" title="在顺序表中插入元素"></a>在顺序表中插入元素</h4><p>将插入元素后的每个元素后移一位，新元素填补空位。</p>
+<p>插入一个元素时移动元素的平均值是n&#x2F;2</p>
+<h4 id="在顺序表中删除元素"><a href="#在顺序表中删除元素" class="headerlink" title="在顺序表中删除元素"></a>在顺序表中删除元素</h4><p>将删除元素后的每个元素前移一位。</p>
+<h4 id="顺序存储结构"><a href="#顺序存储结构" class="headerlink" title="顺序存储结构"></a>顺序存储结构</h4><h5 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h5><h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><ul>
+<li><p>是一种随机存储结构，存取任何一个元素的时间是一个常数，速度快。</p>
+</li>
+<li><p>结构简单，逻辑上相邻的元素也是物理上相邻的。</p>
+</li>
+<li><p>不需要使用指针，节省存储空间</p>
+</li>
+</ul>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><ul>
+<li><p>插入和删除元素需要大量时间</p>
+</li>
+<li><p>需要一块连续的存储空间</p>
+</li>
+<li><p>插入元素时可能发生溢出</p>
+</li>
+</ul>
+<h3 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h3>
             </div>
             <hr/>
 
@@ -667,7 +784,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://arandintday.github.io/2022/04/02/tools-in-hackerman/">http://arandintday.github.io/2022/04/02/tools-in-hackerman/</a>
+                    <a href="http://arandintday.github.io/2022/05/15/learn-datastructure/">http://arandintday.github.io/2022/05/15/learn-datastructure/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -705,20 +822,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
                                 </a>
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
-                                    <span class="chip bg-color">网络安全</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                                    <span class="chip bg-color">数据结构</span>
                                 </a>
                             
-                                <a href="/tags/%E9%BB%91%E5%AE%A2%E5%86%9B%E5%9B%A2/">
-                                    <span class="chip bg-color">黑客军团</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">渗透工具</span>
+                                <a href="/tags/CS/">
+                                    <span class="chip bg-color">CS</span>
                                 </a>
                             
                         </div>
@@ -1022,9 +1135,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/05/15/learn-datastructure/">
                     <div class="card-image">
@@ -1052,9 +1166,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1067,6 +1181,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1093,67 +1208,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/27/clang_notes/">
+                <a href="/2022/04/02/tools-in-hackerman/">
                     <div class="card-image">
                         
+                        <img src="https://s2.loli.net/2022/04/02/9vbimzWhVEoqJ5L.jpg" class="responsive-img" alt="盘点《黑客军团》第一季中出现的那些真实存在的工具软件">
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="C语言学习笔记（待补完）">
-                        
-                        <span class="card-title">C语言学习笔记（待补完）</span>
+                        <span class="card-title">盘点《黑客军团》第一季中出现的那些真实存在的工具软件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一章第二章第三章printf参数
-
-
-变量名
-数据类型
-参数
-大小（字节）
-
-
-
-int
-整型
-%d
-4
-
-
-long
-长整型
-%ld
-8
-
-
-short
-短整型
-%h
-2
-
-
-unsigned
-无符号整型
-%u
-4
-
-
-char
-字符
-
+                            没什么用处的前言
+《黑客军团》（英文名：Hackerman Mr.Robot）算是在一众好莱坞版特效黑客里考据最准确的剧了，追这个剧的时候也见到了不少熟悉的面孔（指软件），所以打算边看剧同时边整理整理这个剧里出现的那些有意思的工具，就当是追
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B9%B2%E8%B4%A7/" class="post-category">
-                                    干货
+                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
+                                    杂谈
                                 </a>
                             
                             
@@ -1163,12 +1242,20 @@ char
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">编程</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
+                    <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+                        <span class="chip bg-color">网络安全</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%BB%91%E5%AE%A2%E5%86%9B%E5%9B%A2/">
+                        <span class="chip bg-color">黑客军团</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">渗透工具</span>
                     </a>
                     
                 </div>
