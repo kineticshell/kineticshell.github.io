@@ -27,7 +27,7 @@
     <script src="/libs/jquery/jquery.min.js"></script>
 	<script data-ad-client="ca-pub-6866791749878424" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
-<meta name="generator" content="Hexo 6.1.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -759,7 +759,105 @@
 <li><p>插入元素时可能发生溢出</p>
 </li>
 </ul>
-<h3 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h3>
+<h3 id="链式存储结构"><a href="#链式存储结构" class="headerlink" title="链式存储结构"></a>链式存储结构</h3><h4 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h4><h5 id="定义-4"><a href="#定义-4" class="headerlink" title="定义"></a>定义</h5><p>线性表中的每个结点分散地储存在内存中，先后依次用指针串联起来</p>
+<p>分为不带表头结点和带表头结点两种类型</p>
+<ul>
+<li>不带表头结点<ul>
+<li>HEAD（头指针）指向首节点<ul>
+<li>结点由DATA（数据域）和NEXT（指针域&#x2F;链域）组成</li>
+</ul>
+</li>
+<li>当HEAD&#x3D;&#x3D;NULL时味为空表</li>
+<li>当为非空表时HEAD指向非空数据</li>
+</ul>
+</li>
+<li>带表头结点<ul>
+<li>HEAD指向表头结点<ul>
+<li>表头结点的DATA为空，NEXT域指向首节点</li>
+</ul>
+</li>
+<li>HEAD-&gt;NEXT域为空则是空表</li>
+</ul>
+</li>
+</ul>
+<h5 id="单链表的结点结构"><a href="#单链表的结点结构" class="headerlink" title="单链表的结点结构"></a>单链表的结点结构</h5><ul>
+<li>struct类型</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> node<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  ElemType data<span class="token punctuation">;</span>
+  <span class="token keyword">struct</span> node <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> node <span class="token operator">*</span>head<span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>typedef类型</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> node<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  ElemType data<span class="token punctuation">;</span>
+  <span class="token keyword">struct</span> node <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> node<span class="token punctuation">,</span> <span class="token operator">*</span>Linklist<span class="token punctuation">;</span>
+Linklist head<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">;</span>
+</code></pre>
+<h5 id="生成单链表-先进后出"><a href="#生成单链表-先进后出" class="headerlink" title="生成单链表(先进后出)"></a>生成单链表(先进后出)</h5><ol>
+<li>定义结点所占空间大小，结点数据域为整形数，然后定义指针域</li>
+</ol>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> LENG sizeof(struct node)</span>
+<span class="token keyword">struct</span> node<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> data<span class="token punctuation">;</span>
+  <span class="token keyword">struct</span> node <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+</code></pre>
+<ol start="2">
+<li>输入新元素以后首先生成新结点</li>
+</ol>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> node <span class="token operator">*</span>head <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span>LENG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> node <span class="token operator">*</span>tail <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span>LENG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> node p <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span>LENG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ol>
+<li>初始化和赋值</li>
+</ol>
+<pre class=" language-c"><code class="language-c">tail <span class="token operator">=</span> head<span class="token punctuation">;</span>
+p <span class="token operator">-></span> data <span class="token operator">=</span> e<span class="token punctuation">;</span>
+p <span class="token operator">-></span> next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+</code></pre>
+<ol>
+<li>添加到表尾</li>
+</ol>
+<pre class=" language-c"><code class="language-c">tail <span class="token operator">-></span> next <span class="token operator">=</span> p<span class="token punctuation">;</span>
+</code></pre>
+<ol>
+<li>设置新表尾</li>
+</ol>
+<pre class=" language-c"><code class="language-c">tail <span class="token operator">=</span> p<span class="token punctuation">;</span>
+</code></pre>
+<ol>
+<li>循环</li>
+</ol>
+<h5 id="生成单链表（后进先出）"><a href="#生成单链表（后进先出）" class="headerlink" title="生成单链表（后进先出）"></a>生成单链表（后进先出）</h5><p>与前者相同，但每一次接收新输入时改用HEAD指向新元素。</p>
+<h5 id="单链表的算法"><a href="#单链表的算法" class="headerlink" title="单链表的算法"></a>单链表的算法</h5><ul>
+<li><p>表头结点的作用</p>
+<ul>
+<li>简化插入流程</li>
+</ul>
+</li>
+<li><p>插入带表头的递增有序单链表</p>
+</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">creat3_2</span><span class="token punctuation">(</span><span class="token keyword">struct</span> node <span class="token operator">*</span>head <span class="token punctuation">,</span> <span class="token keyword">int</span> e<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  q <span class="token operator">=</span> head<span class="token punctuation">;</span>
+  p <span class="token operator">=</span> head <span class="token operator">-></span> next<span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>p <span class="token operator">&amp;&amp;</span> e <span class="token operator">></span> p<span class="token operator">-></span>data<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    q <span class="token operator">=</span> p<span class="token punctuation">;</span>
+    p <span class="token operator">=</span> p <span class="token operator">-></span> next<span class="token punctuation">;</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  f <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">struct</span> node <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span>LENG<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  f<span class="token operator">-></span>data <span class="token operator">=</span> e<span class="token punctuation">;</span>
+  f<span class="token operator">-></span>next <span class="token operator">=</span> p<span class="token punctuation">;</span>
+  q<span class="token operator">-></span>next <span class="token operator">=</span> f<span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+
             </div>
             <hr/>
 
