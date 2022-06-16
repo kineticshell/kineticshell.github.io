@@ -104,21 +104,21 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/games">
+        <a href="/games.html">
           
           <span>Games</span>
         </a>
       </li>
       
       <li>
-        <a href="/movies">
+        <a href="/movies.html">
           
           <span>Movies</span>
         </a>
       </li>
       
       <li>
-        <a href="/books">
+        <a href="/books.html">
           
           <span>Books</span>
         </a>
@@ -243,7 +243,7 @@
               
                 <li>   
 				
-                  <a href="/games " style="margin-left:75px";>
+                  <a href="/games.html " style="margin-left:75px";>
 				  
 		          <span>Games</span>
                   </a>
@@ -251,7 +251,7 @@
               
                 <li>   
 				
-                  <a href="/movies " style="margin-left:75px";>
+                  <a href="/movies.html " style="margin-left:75px";>
 				  
 		          <span>Movies</span>
                   </a>
@@ -259,7 +259,7 @@
               
                 <li>   
 				
-                  <a href="/books " style="margin-left:75px";>
+                  <a href="/books.html " style="margin-left:75px";>
 				  
 		          <span>Books</span>
                   </a>
@@ -634,24 +634,28 @@
 <li>独占资源</li>
 </ul>
 </li>
-<li>报文交换</li>
-<li>分组交换</li>
+<li>报文交换<ul>
+<li>发送源直接向目标发送信号整体</li>
+</ul>
+</li>
+<li>分组交换<ul>
+<li>报文分拆出一系列较小的数据包</li>
+<li>需要报文的分拆和重组</li>
+<li>报文交换和分组交换都采用存储转发交换方式</li>
+<li>适用于突发数据传输网络</li>
+<li>可能产生拥塞</li>
+</ul>
+</li>
 </ul>
 <h4 id="多路复用技术"><a href="#多路复用技术" class="headerlink" title="多路复用技术"></a>多路复用技术</h4><ul>
-<li>频分复用</li>
+<li>频分复用(FDM)</li>
 <li>时分复用</li>
 <li>波分复用<ul>
 <li>就是光的频分复用</li>
 </ul>
 </li>
-<li>码分复用</li>
+<li>码分复用(CDM)</li>
 </ul>
-<h4 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h4><p>发送源直接向目标发送信号整体</p>
-<h4 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h4><p>报文分拆出一系列较小的数据包</p>
-<p>需要报文的分拆和重组</p>
-<p>报文交换和分组交换都采用存储转发交换方式</p>
-<p>适用于突发数据传输网络</p>
-<p>可能产生拥塞</p>
 <h4 id="分组交换的报文交付时间"><a href="#分组交换的报文交付时间" class="headerlink" title="分组交换的报文交付时间"></a>分组交换的报文交付时间</h4><ul>
 <li>报文：M bits</li>
 <li>链路带宽：R bps</li>
@@ -659,6 +663,149 @@
 <li>跳步数：h</li>
 <li>路由器数：n</li>
 <li>交付时间为：T&#x3D;M&#x2F;R+(nL)&#x2F;R</li>
+</ul>
+<h3 id="计算机网络性能"><a href="#计算机网络性能" class="headerlink" title="计算机网络性能"></a>计算机网络性能</h3><h4 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h4><p>数据传输速率，也称为比特率</p>
+<p>单位有bps，kbps，mbps等</p>
+<p>通常指额定速率或标定速率</p>
+<h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4><p>计算机网络中指数据信道能传输的最大数据率</p>
+<p>单位和速率一致</p>
+<h4 id="时延-x2F-延迟"><a href="#时延-x2F-延迟" class="headerlink" title="时延&#x2F;延迟"></a>时延&#x2F;延迟</h4><p>缓存中存储正在发送的分组和排队的分组，若缓存被待传输的分组占满则会产生丢包现象</p>
+<p>四种分组延迟：</p>
+<ul>
+<li>结点处理延迟<ul>
+<li>差错检测</li>
+<li>确定输出链路</li>
+</ul>
+</li>
+<li>排队延迟<ul>
+<li>链路带宽R</li>
+<li>分组长度L</li>
+<li>平均分组到达速率</li>
+<li>流量强度La&#x2F;R<ul>
+<li>接近于0：平均排队延迟很小</li>
+<li>接近于1：平均排队延迟很大</li>
+<li>大于1：超出传输能力，延迟无限大</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>传输延迟<ul>
+<li>分组长度L</li>
+<li>链路带宽R</li>
+<li>L&#x2F;R</li>
+</ul>
+</li>
+<li>传播延迟<ul>
+<li>物理链路长度d</li>
+<li>信号传播速度s</li>
+<li>d&#x2F;s</li>
+</ul>
+</li>
+</ul>
+<h4 id="几种衡量指标"><a href="#几种衡量指标" class="headerlink" title="几种衡量指标"></a>几种衡量指标</h4><ul>
+<li>时延带宽积<ul>
+<li>传播时延（dprop） x 带宽（R）</li>
+</ul>
+</li>
+<li>丢包率<ul>
+<li>丢包数&#x2F;已发送分组数</li>
+</ul>
+</li>
+<li>吞吐量<ul>
+<li>即时吞吐量：给定时刻的速率</li>
+<li>平均吞吐量：一段时间的平均速率</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h3><h4 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h4><blockquote>
+<p>“生于18世纪的格林兄弟深刻改变了网络发展的历史”–《趣学CCNA路由与交换》作者对OSI模型的评价</p>
+</blockquote>
+<ul>
+<li>应用层<ul>
+<li>供用户使用各类服务</li>
+</ul>
+</li>
+<li>表示层<ul>
+<li>处理两个会话单元之间的语法和语义问题</li>
+<li>数据表示转化</li>
+<li>加密&#x2F;解密</li>
+<li>压缩&#x2F;解压缩</li>
+</ul>
+</li>
+<li>会话层<ul>
+<li>对话控制</li>
+<li>对话同步</li>
+</ul>
+</li>
+<li>传输层<ul>
+<li>分段与重组</li>
+<li>SAP寻址</li>
+<li>连接控制</li>
+<li>流量控制</li>
+<li>差错控制</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>负责源主机到目的主机数据分组交付</li>
+<li>逻辑寻址<ul>
+<li>全局唯一逻辑地址，确保数据分组被送达目的主机，如ip地址</li>
+</ul>
+</li>
+<li>路由功能<ul>
+<li>路由器或网关互联网络，并路由分组至最终目的主机</li>
+</ul>
+</li>
+<li>分组转发</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>负责结点间的数据传输</li>
+<li>组帧</li>
+<li>物理寻址<ul>
+<li>在帧头中添加发送端和接收端的物理地址标识数据帧的发送端和接收端</li>
+</ul>
+</li>
+<li>流量控制<ul>
+<li>避免淹没接收端</li>
+</ul>
+</li>
+<li>差错控制<ul>
+<li>检测并重传损坏或丢失的帧，避免重复帧</li>
+</ul>
+</li>
+<li>接入控制</li>
+</ul>
+</li>
+<li>物理层<ul>
+<li>接口特性<ul>
+<li>机械特性</li>
+<li>电气特性</li>
+<li>功能特性</li>
+<li>规程特性</li>
+</ul>
+</li>
+<li>比特编码</li>
+<li>数据率</li>
+<li>比特同步</li>
+<li>传输模式</li>
+<li>单工<ul>
+<li>半双工</li>
+<li>全双工（多工）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="传输过程中增加的控制信息"><a href="#传输过程中增加的控制信息" class="headerlink" title="传输过程中增加的控制信息"></a>传输过程中增加的控制信息</h4><ul>
+<li>地址：标识发送端和接收端</li>
+<li>差错检测编码：保证传输过程不出错</li>
+<li>协议控制：实现协议功能的附加信息，如优先级，服务质量和安全控制</li>
+</ul>
+<h4 id="TCP-x2F-IP参考模型"><a href="#TCP-x2F-IP参考模型" class="headerlink" title="TCP&#x2F;IP参考模型"></a>TCP&#x2F;IP参考模型</h4><ul>
+<li>应用层</li>
+<li>运输层</li>
+<li>网际层</li>
+<li>网络接口层</li>
 </ul>
 
             </div>
@@ -1050,7 +1197,7 @@
                         
                             六月
 雅思词汇学到3000+
-看完《霍比特人》
+看完《霍比特人》 已完成
 计算机网络至少学完传输层章节
 数据结构至少学完栈和队列章节
 至少背完十篇雅思写作范文
