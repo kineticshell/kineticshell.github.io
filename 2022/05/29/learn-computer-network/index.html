@@ -807,7 +807,82 @@
 <li>网际层</li>
 <li>网络接口层</li>
 </ul>
-
+<h4 id="五层参考模型"><a href="#五层参考模型" class="headerlink" title="五层参考模型"></a>五层参考模型</h4><ul>
+<li>应用层<ul>
+<li>支持各种网络应用</li>
+</ul>
+</li>
+<li>传输层<ul>
+<li>进程</li>
+<li>进程的数据传输</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>源主机到目标主机的数据分组路由与转发</li>
+</ul>
+</li>
+<li>数据链路层<ul>
+<li>相邻的网络元素（主机、交换机、路由器等）的数据传输</li>
+</ul>
+</li>
+<li>物理层<ul>
+<li>比特传输</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二章：网络应用"><a href="#第二章：网络应用" class="headerlink" title="第二章：网络应用"></a>第二章：网络应用</h2><h3 id="网络应用体系结构"><a href="#网络应用体系结构" class="headerlink" title="网络应用体系结构"></a>网络应用体系结构</h3><h4 id="客户机-x2F-服务器"><a href="#客户机-x2F-服务器" class="headerlink" title="客户机&#x2F;服务器"></a>客户机&#x2F;服务器</h4><p>服务器</p>
+<ul>
+<li>24小时提供服务</li>
+<li>永久访问地址和域名</li>
+<li>利用大量服务器实现可扩展性</li>
+</ul>
+<p>客户机</p>
+<ul>
+<li>与服务器通信</li>
+<li>间歇性接入网络</li>
+<li>可使用动态IP地址</li>
+<li>不会与其他客户机直接通信</li>
+</ul>
+<h4 id="P2P"><a href="#P2P" class="headerlink" title="P2P"></a>P2P</h4><ul>
+<li>没有永远在线的服务器</li>
+<li>任意端系统&#x2F;节点可直接通信</li>
+<li>节点间歇接入网络</li>
+<li>节点可能改变IP地址</li>
+<li>高度可伸缩</li>
+<li>难于管理</li>
+</ul>
+<h4 id="混合结构"><a href="#混合结构" class="headerlink" title="混合结构"></a>混合结构</h4><ul>
+<li>两种连接方式并存</li>
+<li>例如Napster</li>
+</ul>
+<h3 id="网络应用的进程通信"><a href="#网络应用的进程通信" class="headerlink" title="网络应用的进程通信"></a>网络应用的进程通信</h3><h4 id="进程间通信"><a href="#进程间通信" class="headerlink" title="进程间通信"></a>进程间通信</h4><ul>
+<li>依赖Socket进行通信</li>
+<li>传输基础设施向进程提供API</li>
+</ul>
+<h4 id="如何寻址进程"><a href="#如何寻址进程" class="headerlink" title="如何寻址进程"></a>如何寻址进程</h4><ul>
+<li>不同主机的进程之间通信必须有标识符</li>
+<li>查找特定主机需要IP地址</li>
+<li>查找特定进程需要端口号</li>
+<li>进程的标识符为IP地址+端口号</li>
+</ul>
+<h4 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h4><ul>
+<li>公开协议<ul>
+<li>由RFC制定</li>
+<li>允许互操作</li>
+</ul>
+</li>
+<li>私有协议<ul>
+<li>P2P共享应用</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用层协议的内容"><a href="#应用层协议的内容" class="headerlink" title="应用层协议的内容"></a>应用层协议的内容</h4><ul>
+<li>类型</li>
+<li>语法格式</li>
+<li>字段的语义</li>
+<li>规则</li>
+</ul>
+<h3 id="网络应用的服务需求"><a href="#网络应用的服务需求" class="headerlink" title="网络应用的服务需求"></a>网络应用的服务需求</h3><h4 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h4><h4 id="带宽-1"><a href="#带宽-1" class="headerlink" title="带宽"></a>带宽</h4><h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><h3 id="Internet传输层服务模型"><a href="#Internet传输层服务模型" class="headerlink" title="Internet传输层服务模型"></a>Internet传输层服务模型</h3><h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><h3 id="特定网络应用及协议"><a href="#特定网络应用及协议" class="headerlink" title="特定网络应用及协议"></a>特定网络应用及协议</h3><h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><h4 id="SMTP-x2F-POP-x2F-IMAP"><a href="#SMTP-x2F-POP-x2F-IMAP" class="headerlink" title="SMTP&#x2F;POP&#x2F;IMAP"></a>SMTP&#x2F;POP&#x2F;IMAP</h4><h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><h4 id="P2P-1"><a href="#P2P-1" class="headerlink" title="P2P"></a>P2P</h4><h3 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h3><h4 id="TCP-1"><a href="#TCP-1" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP-1"><a href="#UDP-1" class="headerlink" title="UDP"></a>UDP</h4>
             </div>
             <hr/>
 
@@ -1196,7 +1271,7 @@
                     <div class="summary block-with-text">
                         
                             六月
-雅思词汇学到3000+
+雅思词汇学到3000+ 已完成
 看完《霍比特人》 已完成
 计算机网络至少学完传输层章节
 数据结构至少学完栈和队列章节
