@@ -882,7 +882,303 @@
 <li>字段的语义</li>
 <li>规则</li>
 </ul>
-<h3 id="网络应用的服务需求"><a href="#网络应用的服务需求" class="headerlink" title="网络应用的服务需求"></a>网络应用的服务需求</h3><h4 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h4><h4 id="带宽-1"><a href="#带宽-1" class="headerlink" title="带宽"></a>带宽</h4><h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4><h3 id="Internet传输层服务模型"><a href="#Internet传输层服务模型" class="headerlink" title="Internet传输层服务模型"></a>Internet传输层服务模型</h3><h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><h3 id="特定网络应用及协议"><a href="#特定网络应用及协议" class="headerlink" title="特定网络应用及协议"></a>特定网络应用及协议</h3><h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><h4 id="SMTP-x2F-POP-x2F-IMAP"><a href="#SMTP-x2F-POP-x2F-IMAP" class="headerlink" title="SMTP&#x2F;POP&#x2F;IMAP"></a>SMTP&#x2F;POP&#x2F;IMAP</h4><h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><h4 id="P2P-1"><a href="#P2P-1" class="headerlink" title="P2P"></a>P2P</h4><h3 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h3><h4 id="TCP-1"><a href="#TCP-1" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP-1"><a href="#UDP-1" class="headerlink" title="UDP"></a>UDP</h4>
+<h3 id="网络应用的服务需求"><a href="#网络应用的服务需求" class="headerlink" title="网络应用的服务需求"></a>网络应用的服务需求</h3><ul>
+<li>可靠性</li>
+<li>带宽</li>
+<li>时延</li>
+</ul>
+<h3 id="Internet传输层服务模型"><a href="#Internet传输层服务模型" class="headerlink" title="Internet传输层服务模型"></a>Internet传输层服务模型</h3><h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><ul>
+<li>面向连接</li>
+<li>可靠的传输</li>
+<li>流量控制</li>
+<li>拥塞控制</li>
+<li>不提供时间&#x2F;延迟保障</li>
+<li>不提供最小带宽保证</li>
+</ul>
+<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4><ul>
+<li>无连接</li>
+<li>不可靠的数据传输</li>
+<li>不提供TCP所具有的性质</li>
+</ul>
+<h3 id="特定网络应用及协议"><a href="#特定网络应用及协议" class="headerlink" title="特定网络应用及协议"></a>特定网络应用及协议</h3><ul>
+<li>URL&#x2F;统一资源定位器<ul>
+<li>protocol:&#x2F;&#x2F;domain(ip_address):port&#x2F;path</li>
+</ul>
+</li>
+</ul>
+<h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><ul>
+<li>超文本传输协议</li>
+<li>客户端&#x2F;服务器模式</li>
+<li>TCP传输模式</li>
+<li>无状态协议<ul>
+<li>不维护任何有关客户端过去所发的请求</li>
+</ul>
+</li>
+<li>HTTP连接的两种类型<ul>
+<li>非持久<ul>
+<li>每次传输只允许一个对象</li>
+<li>HTTP1.0</li>
+<li>需要为每个TCP连接开销资源</li>
+<li>每个对象需要2个RTT</li>
+</ul>
+</li>
+<li>持久<ul>
+<li>允许传输多个对象</li>
+<li>HTTP1.1开始使用持久连接</li>
+<li>发送响应后保持TCP连接的打开状态</li>
+<li>后续的HTTPS请求可通过此连接进行传输</li>
+<li>每个需要1个RTT</li>
+<li>Streamng Mode：遇到引用对象就立即发出请求<ul>
+<li>此模式下收到所有引用对象只需花费1个RTT</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>响应时间<ul>
+<li>RTT（Round Trip Time）：从客户端发送一个很小的数据包并返回所经历的时间</li>
+<li>2RTT+传输时间</li>
+</ul>
+</li>
+<li>消息格式<ul>
+<li>请求消息<ul>
+<li>Request Lines(请求行)：GET&#x2F;POST&#x2F;HEAD+URL+HTTP版本</li>
+<li>Header Lines(头部行)：可扩展，包括UA&#x2F;Host&#x2F;Connection和Refer等</li>
+<li>Carriage Return：表示请求内容结束</li>
+<li>Entity Body：需要传输的数据</li>
+</ul>
+</li>
+<li>上传消息<ul>
+<li>POST：大多数通过<code>&lt;form&gt;</code>表格发出带有目标数据的POST数据包</li>
+<li>URL：通过将参数包含在Request Lines的URL字段发出</li>
+</ul>
+</li>
+<li>响应消息<ul>
+<li>Status Lines（状态行）：HTTP版本+状态码+状态号</li>
+<li>Header Lines（头部行）：包含Connection&#x2F;Date&#x2F;Server等</li>
+<li>Carriage Return：表示请求内容结束</li>
+<li>Entity Body：需要传输的数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>方法类型<ul>
+<li>HTTP1.0<ul>
+<li>GET</li>
+<li>POST</li>
+<li>HEAD<ul>
+<li>让服务器只发送请求头</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP1.1<ul>
+<li>GET&#x2F;POST&#x2F;HEAD</li>
+<li>PUT<ul>
+<li>将Entity Body中的文件上传到URL指定的位置</li>
+</ul>
+</li>
+<li>DELETE<ul>
+<li>删除URL指定的文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cookies技术<ul>
+<li>网站为了辨别用户身份进行session trace而储存在用户本地的数据（通常被加密）</li>
+<li>cookie组件<ul>
+<li>HTTP响应消息的cookie头部行</li>
+<li>HTTP请求消息的cookie头部行</li>
+<li>保存在客户机上的cookie文件，由浏览器管理</li>
+<li>web服务器的后台数据库</li>
+</ul>
+</li>
+<li>用途<ul>
+<li>身份认证</li>
+<li>购物车</li>
+<li>算法推荐</li>
+<li>email</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WEB缓存与代理服务器<ul>
+<li>在不直接访问目标服务器的前提下满足客户端的HTTP请求</li>
+<li>实现方法<ul>
+<li>用户向代理服务器发送GET请求</li>
+<li>代理服务器检查是否有对应的缓存<ul>
+<li>若有则对请求予以响应</li>
+<li>若没有则向目标服务器发送GET并转发响应给客户端</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WEB缓存性能分析<ul>
+<li>LAN利用率：公网通讯对象平均大小*请求数&#x2F;LAN的每秒数据传输量</li>
+<li>链路利用率：公网通讯对象平均大小*请求数&#x2F;WAN的每秒数据传输量</li>
+<li>平均总延迟：互联网延迟+访问延迟+局域网延迟</li>
+<li>使用WEB缓存服务器可有效缓解低WAN链路速率造成的传输缓慢问题</li>
+</ul>
+</li>
+<li>解决WEB缓存服务器与服务器同步问题<ul>
+<li>条件性GET方法<ul>
+<li>如果缓存有最新版本，则不需要发送请求对象</li>
+</ul>
+</li>
+<li>在HTTP请求消息中声明所持有版本的日期<ul>
+<li>if-modified-since:<code>&lt;date&gt;</code></li>
+</ul>
+</li>
+<li>如果缓存版本是最新的，则服务器不返回对象<ul>
+<li>HTTP&#x2F;1.0 304 Not Modified</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="SMTP-x2F-POP-x2F-IMAP"><a href="#SMTP-x2F-POP-x2F-IMAP" class="headerlink" title="SMTP&#x2F;POP&#x2F;IMAP"></a>SMTP&#x2F;POP&#x2F;IMAP</h4><ul>
+<li>组成结构<ul>
+<li>邮件客户端</li>
+<li>邮件服务器</li>
+<li>SMTP协议</li>
+</ul>
+</li>
+<li>使用TCP进行email的可靠传输</li>
+<li>端口25</li>
+<li>传输过程<ul>
+<li>握手</li>
+<li>消息传输<ul>
+<li>Header<ul>
+<li>To</li>
+<li>From</li>
+<li>Subject</li>
+</ul>
+</li>
+<li>Body<ul>
+<li>只能包含7位ascii码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>关闭</li>
+</ul>
+</li>
+<li>传输步骤<ul>
+<li>HELO <code>&lt;client_address&gt;</code></li>
+<li>MAIL FROM: <code>&lt;sender address&gt;</code></li>
+<li>RCPT TO: <code>&lt;receiver address&gt;</code></li>
+<li>DATA</li>
+<li><code>&lt;data&gt;</code></li>
+<li>.</li>
+<li>QUIT</li>
+</ul>
+</li>
+<li>使用CRLF.CRLF作为传输终止标志<ul>
+<li>CRLF为换行符</li>
+</ul>
+</li>
+<li>多媒体扩展问题<ul>
+<li>在邮件头部添加额外的MIME参数用于识别类型</li>
+<li>添加的行<ul>
+<li>MIME-Version</li>
+<li>Content-Transfer-Encoding</li>
+<li>Content-Type</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>邮件访问协议<ul>
+<li>POP<ul>
+<li>Post Office Protocol</li>
+<li>认证&#x2F;授权&#x2F;下载</li>
+</ul>
+</li>
+<li>IMAP<ul>
+<li>Internet Mail Access Protocol</li>
+<li>更多功能</li>
+<li>更复杂</li>
+<li>能够操作服务器的数据</li>
+</ul>
+</li>
+<li>HTTP<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4></li>
+</ul>
+</li>
+</ul>
+<h4 id="P2P-1"><a href="#P2P-1" class="headerlink" title="P2P"></a>P2P</h4><h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><ul>
+<li>提供寻址服务</li>
+<li>传输格式<ul>
+<li>版本（4位）<ul>
+<li>IPv4&#x2F;IPv6</li>
+</ul>
+</li>
+<li>首部长度（4位）</li>
+<li>优先级与服务类型（4位）<ul>
+<li>是否对数据包进行特殊处理</li>
+</ul>
+</li>
+<li>总长度（16位）<ul>
+<li>头部长度+可选项和数据长度</li>
+<li>空请求为20字节</li>
+</ul>
+</li>
+<li>标识符（16位）<ul>
+<li>用于数据包的分片与组合</li>
+</ul>
+</li>
+<li>标志（13位）<ul>
+<li>用于数据包的分片与组合</li>
+</ul>
+</li>
+<li>段偏移量（13位）<ul>
+<li>用于数据包的分片与组合</li>
+</ul>
+</li>
+<li>TTL（8位）<ul>
+<li>原指生存时间</li>
+<li>实际代表数据包能够经过的最多路由器数量</li>
+</ul>
+</li>
+<li>协议号（8位）</li>
+<li>首部校验和（16位）<ul>
+<li>检测头部完整性</li>
+</ul>
+</li>
+<li>源地址（32位）</li>
+<li>目的地址（32位）</li>
+<li>可选项</li>
+<li>数据</li>
+</ul>
+</li>
+</ul>
+<h4 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h4><ul>
+<li>测试连通性</li>
+<li>ping命令的基础协议</li>
+<li>不属于网络层也不属于传输层</li>
+<li>封装在IP数据包中</li>
+<li>传输格式<ul>
+<li>IP首部（20字节）</li>
+<li>ICMP首部（8字节）<ul>
+<li>类型</li>
+<li>代码</li>
+<li>检验和</li>
+<li>依消息类型而定<ul>
+<li>回应与回应应答消息</li>
+<li>目的地不可达消息</li>
+<li>发送超时消息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据</li>
+</ul>
+</li>
+</ul>
+<h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><h3 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h3><h4 id="TCP-1"><a href="#TCP-1" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP-1"><a href="#UDP-1" class="headerlink" title="UDP"></a>UDP</h4>
             </div>
             <hr/>
 
@@ -1273,11 +1569,13 @@
                             六月
 雅思词汇学到3000+ 已完成
 看完《霍比特人》 已完成
+计算机网络至少学完传输层章节 未完成，学到了网络应用章节
+数据结构至少学完栈和队列章节 已完成
+至少背完十篇雅思写作范文 未完成
+
+七月
 计算机网络至少学完传输层章节
-数据结构至少学完栈和队列章节
-至少背完十篇雅思写作范文
-
-
+数据结构
                         
                     </div>
                     <div class="publish-info">

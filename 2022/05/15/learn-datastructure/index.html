@@ -1061,6 +1061,45 @@ top <span class="token operator">=</span> top <span class="token operator">-></s
 <li>判断表达式中<code>&#123;</code>和<code>&#125;</code>是否匹配</li>
 <li>表达式求值</li>
 </ul>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><ul>
+<li>只允许在一端插入元素，另一端删除元素的线性表</li>
+<li>队首head&#x2F;front</li>
+<li>队尾rear&#x2F;tail</li>
+<li>入队&#x2F;出队&#x3D;新元素插到队尾&#x2F;删除队首元素</li>
+<li>又名先进先出表</li>
+</ul>
+<h4 id="队列的头和尾"><a href="#队列的头和尾" class="headerlink" title="队列的头和尾"></a>队列的头和尾</h4><ul>
+<li>Q.front队头首指针，指向队头结点</li>
+<li>Q.rear队尾指针，指向队尾结点</li>
+<li>Q.front -&gt; data不放元素</li>
+<li>空队列时首尾指针都指向首节点，首节点next域为空</li>
+</ul>
+<h4 id="生成空队列"><a href="#生成空队列" class="headerlink" title="生成空队列"></a>生成空队列</h4><pre><code>#define LENG sizeof(Qnode)
+LinkQueue InitLQ()&#123;
+  LinkQueue Q;
+  Q.front=Q.rear=(QueuePtr)malloc(LENG);
+  Q.front -&gt; next = NULL;
+  return Q;
+&#125;
+</code></pre>
+<h4 id="插入新元素"><a href="#插入新元素" class="headerlink" title="插入新元素"></a>插入新元素</h4><pre><code>Qnode p = (Qnode *)malloc(LENG);//建立新结点
+p -&gt; data = e;//给新结点的next域赋值
+p -&gt; next = NULL;//新结点的next域为空
+Q.rear -&gt; next = p;//尾元素next域指向新结点
+Q.rear = p;//尾指针指向新结点
+</code></pre>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><pre><code>/*非空队列*/
+Qnode *p = Q.front;//指向待删除首节点
+(*e) = p -&gt; data;//取出data
+Q.front -&gt;next = p -&gt; next;//首指针指向第二个结点
+free(p);//释放目标结点的内存
+</code></pre>
+<pre><code>/*单元素队列*/
+Qnode *p = Q.front;
+(*e) = p -&gt; data;
+Q.front -&gt;next = Q.rear;//首指针指向尾指针
+free(p);
+</code></pre>
 
             </div>
             <hr/>
