@@ -1042,15 +1042,19 @@
 </li>
 </ul>
 <h4 id="SMTP-x2F-POP-x2F-IMAP"><a href="#SMTP-x2F-POP-x2F-IMAP" class="headerlink" title="SMTP&#x2F;POP&#x2F;IMAP"></a>SMTP&#x2F;POP&#x2F;IMAP</h4><ul>
-<li>组成结构<ul>
+<li><p>组成结构</p>
+<ul>
 <li>邮件客户端</li>
 <li>邮件服务器</li>
 <li>SMTP协议</li>
 </ul>
 </li>
-<li>使用TCP进行email的可靠传输</li>
-<li>端口25</li>
-<li>传输过程<ul>
+<li><p>使用TCP进行email的可靠传输</p>
+</li>
+<li><p>端口25</p>
+</li>
+<li><p>传输过程</p>
+<ul>
 <li>握手</li>
 <li>消息传输<ul>
 <li>Header<ul>
@@ -1068,7 +1072,8 @@
 <li>关闭</li>
 </ul>
 </li>
-<li>传输步骤<ul>
+<li><p>传输步骤</p>
+<ul>
 <li>HELO <code>&lt;client_address&gt;</code></li>
 <li>MAIL FROM: <code>&lt;sender address&gt;</code></li>
 <li>RCPT TO: <code>&lt;receiver address&gt;</code></li>
@@ -1078,11 +1083,13 @@
 <li>QUIT</li>
 </ul>
 </li>
-<li>使用CRLF.CRLF作为传输终止标志<ul>
+<li><p>使用CRLF.CRLF作为传输终止标志</p>
+<ul>
 <li>CRLF为换行符</li>
 </ul>
 </li>
-<li>多媒体扩展问题<ul>
+<li><p>多媒体扩展问题</p>
+<ul>
 <li>在邮件头部添加额外的MIME参数用于识别类型</li>
 <li>添加的行<ul>
 <li>MIME-Version</li>
@@ -1092,10 +1099,13 @@
 </li>
 </ul>
 </li>
-<li>邮件访问协议<ul>
+<li><p>邮件访问协议</p>
+<ul>
 <li>POP<ul>
 <li>Post Office Protocol</li>
 <li>认证&#x2F;授权&#x2F;下载</li>
+<li>下载并删除和下载并保持模式</li>
+<li>无状态</li>
 </ul>
 </li>
 <li>IMAP<ul>
@@ -1108,8 +1118,152 @@
 <li>HTTP<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4></li>
 </ul>
 </li>
+<li><p>多层命名服务器构成的分布式数据库</p>
+</li>
+<li><p>应用层上完成对名字的解析</p>
+</li>
+<li><p>为web服务器提供负载均衡</p>
+</li>
+<li><p>域名向IP地址的翻译</p>
+</li>
+<li><p>主机别名</p>
+</li>
+<li><p>查询与回复型通信</p>
+</li>
+<li><p>消息格式相同</p>
+</li>
+<li><p>DNS解析次序</p>
+<ul>
+<li>本地域名解析（hosts文件）</li>
+<li>若没有，转向根域名服务器<ul>
+<li>DNS劫持通常会伪造成根域名服务器来劫持请求并返回错误的映射，最常见于某米某讯原厂固件wifi自带的广告</li>
 </ul>
-<h4 id="P2P-1"><a href="#P2P-1" class="headerlink" title="P2P"></a>P2P</h4><h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><ul>
+</li>
+<li>若还是没有，转向权威域名服务器<ul>
+<li>中国国家防火墙（GFW）DNS污染以及运营商DNS劫持的重点攻击对象</li>
+<li>通常会劫持返回的映射到一个无法访问的IP地址从而造成用户connection timedout</li>
+<li>若用户开启了DoH（DNS over HTTPS）或者DoT（DNS over TLS）则GFW会使用TCP重置攻击，通过恶意拦截并向TCP报文中注入REST标志来造成用户connection reset</li>
+</ul>
+</li>
+<li>获得映射</li>
+<li>返回映射</li>
+</ul>
+</li>
+<li><p>顶级域名服务器</p>
+<ul>
+<li>负责org&#x2F;com&#x2F;net&#x2F;edu等顶级域名和国家域名</li>
+</ul>
+</li>
+<li><p>本地域名解析服务器</p>
+<ul>
+<li>每个网络供应商（ISP）都有</li>
+</ul>
+</li>
+<li><p>迭代查询</p>
+<ul>
+<li>本地DNS服务器发送多次请求</li>
+<li><del>踢皮球式查询法</del></li>
+</ul>
+</li>
+<li><p>递归查询</p>
+<ul>
+<li>主机和本地DNS都只发送一次请求，其余的都由后续服务器处理</li>
+<li><del>传火式查询法</del></li>
+</ul>
+</li>
+<li><p>DNS缓存</p>
+<ul>
+<li>只要DNS解析服务器获得了IP&#x2F;域名映射就会缓存此映射</li>
+<li>一段时间后失效并删除，随后缓存新的映射</li>
+</ul>
+</li>
+<li><p>DNS记录</p>
+<ul>
+<li>资源记录（Resource Record）<ul>
+<li>Type A<ul>
+<li>Name: Host Name</li>
+<li>Value: IP Address</li>
+</ul>
+</li>
+<li>Type NS<ul>
+<li>Name: Domain</li>
+<li>Value: Authority DNS server’s host name</li>
+</ul>
+</li>
+<li>Type CNAME<ul>
+<li>Name: Alternative name of a domain</li>
+<li>Value: Real name of a domain</li>
+</ul>
+</li>
+<li>Type MX<ul>
+<li>Value是与name对应的邮件服务器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>消息结构</p>
+<ul>
+<li>消息头部<ul>
+<li>16位查询编号</li>
+</ul>
+</li>
+<li>查询</li>
+<li>回复</li>
+<li>权威回答</li>
+<li>补充信息</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>扩展阅读：<br><a target="_blank" rel="noopener" href="https://github.com/alex/what-happens-when">What happens when… - Github</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/skyline75489/what-happens-when-zh_CN">中文版</a></p>
+</blockquote>
+<h4 id="P2P-1"><a href="#P2P-1" class="headerlink" title="P2P"></a>P2P</h4><ul>
+<li>特点<ul>
+<li>没有服务器</li>
+<li>任意端系统直接通信</li>
+<li>结点阶段性接入Internet</li>
+<li>结点可能更换IP地址</li>
+</ul>
+</li>
+<li>数据传输速率比客户端&#x2F;服务器模式快<ul>
+<li>客户端&#x2F;服务器：dcs &#x3D; max{NF&#x2F;us, F&#x2F;min(di)}<ul>
+<li>F：文件大小</li>
+<li>N：副本数</li>
+<li>us：上传速度</li>
+<li>di：下载速度</li>
+</ul>
+</li>
+<li>P2P：dcs &#x3D; max{F&#x2F;us, F&#x2F;min(di)i, NF&#x2F;(us+εui)}<ul>
+<li>us+εui最快可能上传速率</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>BitTorrent</li>
+<li>IPFS</li>
+<li>区块链</li>
+<li>分布式计算</li>
+</ul>
+</li>
+<li>结构<ul>
+<li>peer<ul>
+<li>上传与下载者</li>
+<li>“做种（Seeding）”就是代表某个peer向整个p2p网络分享文件的行为</li>
+<li>从其他peer下载chunk的同时也会向其他peer共享本地以下载但对方没有的chunk</li>
+</ul>
+</li>
+<li>Tracker<ul>
+<li>跟踪参与Torrent的结点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><ul>
 <li>提供寻址服务</li>
 <li>传输格式<ul>
 <li>版本（4位）<ul>
@@ -1566,16 +1720,15 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            六月
+                            六月主要
 雅思词汇学到3000+ 已完成
 看完《霍比特人》 已完成
 计算机网络至少学完传输层章节 未完成，学到了网络应用章节
 数据结构至少学完栈和队列章节 已完成
 至少背完十篇雅思写作范文 未完成
 
-七月
-计算机网络至少学完传输层章节
-数据结构
+业余折腾
+在surface上安装带有触屏
                         
                     </div>
                     <div class="publish-info">
