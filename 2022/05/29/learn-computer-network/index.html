@@ -1042,19 +1042,15 @@
 </li>
 </ul>
 <h4 id="SMTP-x2F-POP-x2F-IMAP"><a href="#SMTP-x2F-POP-x2F-IMAP" class="headerlink" title="SMTP&#x2F;POP&#x2F;IMAP"></a>SMTP&#x2F;POP&#x2F;IMAP</h4><ul>
-<li><p>组成结构</p>
-<ul>
+<li>组成结构<ul>
 <li>邮件客户端</li>
 <li>邮件服务器</li>
 <li>SMTP协议</li>
 </ul>
 </li>
-<li><p>使用TCP进行email的可靠传输</p>
-</li>
-<li><p>端口25</p>
-</li>
-<li><p>传输过程</p>
-<ul>
+<li>使用TCP进行email的可靠传输</li>
+<li>端口25</li>
+<li>传输过程<ul>
 <li>握手</li>
 <li>消息传输<ul>
 <li>Header<ul>
@@ -1072,8 +1068,7 @@
 <li>关闭</li>
 </ul>
 </li>
-<li><p>传输步骤</p>
-<ul>
+<li>传输步骤<ul>
 <li>HELO <code>&lt;client_address&gt;</code></li>
 <li>MAIL FROM: <code>&lt;sender address&gt;</code></li>
 <li>RCPT TO: <code>&lt;receiver address&gt;</code></li>
@@ -1083,13 +1078,11 @@
 <li>QUIT</li>
 </ul>
 </li>
-<li><p>使用CRLF.CRLF作为传输终止标志</p>
-<ul>
+<li>使用CRLF.CRLF作为传输终止标志<ul>
 <li>CRLF为换行符</li>
 </ul>
 </li>
-<li><p>多媒体扩展问题</p>
-<ul>
+<li>多媒体扩展问题<ul>
 <li>在邮件头部添加额外的MIME参数用于识别类型</li>
 <li>添加的行<ul>
 <li>MIME-Version</li>
@@ -1099,8 +1092,7 @@
 </li>
 </ul>
 </li>
-<li><p>邮件访问协议</p>
-<ul>
+<li>邮件访问协议<ul>
 <li>POP<ul>
 <li>Post Office Protocol</li>
 <li>认证&#x2F;授权&#x2F;下载</li>
@@ -1115,25 +1107,19 @@
 <li>能够操作服务器的数据</li>
 </ul>
 </li>
-<li>HTTP<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4></li>
+<li>HTTP</li>
 </ul>
 </li>
-<li><p>多层命名服务器构成的分布式数据库</p>
-</li>
-<li><p>应用层上完成对名字的解析</p>
-</li>
-<li><p>为web服务器提供负载均衡</p>
-</li>
-<li><p>域名向IP地址的翻译</p>
-</li>
-<li><p>主机别名</p>
-</li>
-<li><p>查询与回复型通信</p>
-</li>
-<li><p>消息格式相同</p>
-</li>
-<li><p>DNS解析次序</p>
-<ul>
+</ul>
+<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><ul>
+<li>多层命名服务器构成的分布式数据库</li>
+<li>应用层上完成对名字的解析</li>
+<li>为web服务器提供负载均衡</li>
+<li>域名向IP地址的翻译</li>
+<li>主机别名</li>
+<li>查询与回复型通信</li>
+<li>消息格式相同</li>
+<li>DNS解析次序<ul>
 <li>本地域名解析（hosts文件）</li>
 <li>若没有，转向根域名服务器<ul>
 <li>DNS劫持通常会伪造成根域名服务器来劫持请求并返回错误的映射，最常见于某米某讯原厂固件wifi自带的广告</li>
@@ -1149,36 +1135,30 @@
 <li>返回映射</li>
 </ul>
 </li>
-<li><p>顶级域名服务器</p>
-<ul>
+<li>顶级域名服务器<ul>
 <li>负责org&#x2F;com&#x2F;net&#x2F;edu等顶级域名和国家域名</li>
 </ul>
 </li>
-<li><p>本地域名解析服务器</p>
-<ul>
+<li>本地域名解析服务器<ul>
 <li>每个网络供应商（ISP）都有</li>
 </ul>
 </li>
-<li><p>迭代查询</p>
-<ul>
+<li>迭代查询<ul>
 <li>本地DNS服务器发送多次请求</li>
 <li><del>踢皮球式查询法</del></li>
 </ul>
 </li>
-<li><p>递归查询</p>
-<ul>
+<li>递归查询<ul>
 <li>主机和本地DNS都只发送一次请求，其余的都由后续服务器处理</li>
 <li><del>传火式查询法</del></li>
 </ul>
 </li>
-<li><p>DNS缓存</p>
-<ul>
+<li>DNS缓存<ul>
 <li>只要DNS解析服务器获得了IP&#x2F;域名映射就会缓存此映射</li>
 <li>一段时间后失效并删除，随后缓存新的映射</li>
 </ul>
 </li>
-<li><p>DNS记录</p>
-<ul>
+<li>DNS记录<ul>
 <li>资源记录（Resource Record）<ul>
 <li>Type A<ul>
 <li>Name: Host Name</li>
@@ -1203,8 +1183,7 @@
 </li>
 </ul>
 </li>
-<li><p>消息结构</p>
-<ul>
+<li>消息结构<ul>
 <li>消息头部<ul>
 <li>16位查询编号</li>
 </ul>
@@ -1258,6 +1237,45 @@
 </li>
 <li>Tracker<ul>
 <li>跟踪参与Torrent的结点</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>P2P的索引<ul>
+<li>信息到结点位置的映射(IP+端口号)</li>
+<li>文件共享<ul>
+<li>利用索引动态跟踪结点共享的文件位置</li>
+<li>结点需要告诉索引它拥有哪些文件</li>
+<li>结点搜索索引从而知道能够获得哪些文件</li>
+</ul>
+</li>
+<li>即时通讯<ul>
+<li>负责将用户名映射到位置</li>
+<li>开启IM时，需要通知索引它的位置</li>
+<li>结点搜索索引，确定用户的IP地址</li>
+</ul>
+</li>
+<li>集中式索引<ul>
+<li>结点需要向中央服务器提供自己的IP地址和文件列表</li>
+<li>单点失效问题</li>
+<li>性能瓶颈</li>
+<li>版权问题</li>
+</ul>
+</li>
+<li>泛洪式索引<ul>
+<li>完全分布式架构</li>
+<li>每个结点都只对它共享的文件进行索引</li>
+<li>通过已有的TCP连接发送</li>
+<li>结点转发查询消息</li>
+<li>如果查询命中，则利用反向路径发回查询结点</li>
+</ul>
+</li>
+<li>层次型覆盖网络<ul>
+<li>混合型</li>
+<li>分为超级结点和普通结点</li>
+<li>超级结点和结点维持TCP连接</li>
+<li>私有应用层协议</li>
+<li>索引分布在超级结点上</li>
 </ul>
 </li>
 </ul>
@@ -1332,7 +1350,31 @@
 </ul>
 </li>
 </ul>
-<h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><h3 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h3><h4 id="TCP-1"><a href="#TCP-1" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP-1"><a href="#UDP-1" class="headerlink" title="UDP"></a>UDP</h4>
+<h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><h3 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h3><h4 id="网络程序设计接口"><a href="#网络程序设计接口" class="headerlink" title="网络程序设计接口"></a>网络程序设计接口</h4><ul>
+<li>数据链路层<ul>
+<li>直接网卡编程</li>
+<li>基于NDIS网络编程（Windows）</li>
+<li>基于Libcap&#x2F;Winpcap、Libnet、Libnids、Libicmp编程</li>
+<li>基于PacketDriver编程</li>
+</ul>
+</li>
+<li>传输层<ul>
+<li>基于NetBIOS编程（Windows）</li>
+<li>Socket编程</li>
+</ul>
+</li>
+<li>应用层<ul>
+<li>Web&#x2F;RPC&#x2F;中间件编程</li>
+</ul>
+</li>
+</ul>
+<h4 id="应用编程接口（API）"><a href="#应用编程接口（API）" class="headerlink" title="应用编程接口（API）"></a>应用编程接口（API）</h4><ul>
+<li>应用进程控制权和操作系统的控制权进行转换的一个系统调用接口</li>
+<li>UCB定义了Socket标准，并用在了BSD中</li>
+<li>Windows采用的是WINSOCK</li>
+<li>UNIX中采用的是TLI</li>
+</ul>
+<h4 id="TCP-1"><a href="#TCP-1" class="headerlink" title="TCP"></a>TCP</h4><h4 id="UDP-1"><a href="#UDP-1" class="headerlink" title="UDP"></a>UDP</h4>
             </div>
             <hr/>
 
