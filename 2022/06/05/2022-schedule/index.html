@@ -546,7 +546,10 @@
             <div id="articleContent">
                 <h2 id="六月"><a href="#六月" class="headerlink" title="六月"></a>六月</h2><h3 id="主要"><a href="#主要" class="headerlink" title="主要"></a>主要</h3><ul>
 <li><del>雅思词汇学到3000+</del> 已完成</li>
-<li><del>看完《霍比特人》</del> 已完成</li>
+<li>看完：<ul>
+<li><del>《霍比特人》</del> 已完成</li>
+</ul>
+</li>
 <li>计算机网络至少学完传输层章节 未完成，学到了网络应用章节</li>
 <li><del>数据结构至少学完栈和队列章节</del> 已完成</li>
 <li>至少背完十篇雅思写作范文 未完成</li>
@@ -568,9 +571,14 @@
 <li>计算机网络至少学完传输层章节</li>
 <li>数据结构至少学到树与二叉树</li>
 <li><del>背完雅思词汇4000</del> 已完成</li>
-<li>看完《社会契约论》，《蝇王》</li>
-<li>刷3道leetcode简单难度题目并完全弄懂</li>
-<li>画3幅像素画</li>
+<li>看完：<ul>
+<li>《社会契约论》</li>
+<li><del>《蝇王》</del> 已完成</li>
+</ul>
+</li>
+<li>刷3道leetcode简单难度题目并完全弄懂（1&#x2F;3）</li>
+<li>画3幅像素画（1&#x2F;3）</li>
+<li>背5篇雅思范文（0&#x2F;5）</li>
 <li>增肌0.5kg</li>
 <li>减脂1kg</li>
 </ul>
@@ -579,8 +587,10 @@
 <li><del>Bonus：尝试修改brunch的安装脚本来实现sd卡同时引导win和chromeos</del></li>
 </ul>
 </li>
-<li>购置一台xperia 1和vivo NEX</li>
-<li>把fatijia装成win11</li>
+<li>购置一台xperia 1和vivo NEX 资金不足，暂且搁置</li>
+<li>把fatijia装成win11 搁置</li>
+<li><del>安装chromeos到U盘中</del> 已完成</li>
+<li>学习cocos2dx开发并按照教程做个最简单的demo</li>
 </ul>
 
             </div>
@@ -668,6 +678,131 @@
 
                 </div>
             </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#ether">Ethereum</a></li>
+                        <!--li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#usdt">USDT-ERC-20</a></li-->
+                        <!--li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#usdt"DOGE</a></li-->
+                    </ul>
+                    <div id="ether">
+                        <img src="/medias/reward/ether.png" class="reward-img" alt="Ethereum地址">
+                        <!--img src="" class="reward-img" alt="USDT地址"-->
+                        <!--img src="" class="reward-img" alt="DOGE地址"-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
             
         </div>
     </div>
