@@ -560,7 +560,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本文翻译自XDA的教程，译者A Randint Day<br>原文链接：<a href="https://www.xda-developers.com/jailbreak-apple-iphone-using-checkra1n-rooted-android-phone/" target="_blank" rel="noopener">https://www.xda-developers.com/jailbreak-apple-iphone-using-checkra1n-rooted-android-phone/</a></p>
+                <p>本文翻译自XDA的教程，译者A Randint Day<br>原文链接：<a target="_blank" rel="noopener" href="https://www.xda-developers.com/jailbreak-apple-iphone-using-checkra1n-rooted-android-phone/">https://www.xda-developers.com/jailbreak-apple-iphone-using-checkra1n-rooted-android-phone/</a></p>
 <h1 id="搞机有风险，越狱需谨慎"><a href="#搞机有风险，越狱需谨慎" class="headerlink" title="搞机有风险，越狱需谨慎"></a>搞机有风险，越狱需谨慎</h1><h2 id="准备材料"><a href="#准备材料" class="headerlink" title="准备材料"></a>准备材料</h2><ul>
 <li>一颗健全的大脑</li>
 <li>一颗爱折腾的心</li>
@@ -572,12 +572,12 @@
 <li>一根type-c转雷电转接线</li>
 </ul>
 <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li>下载<a href="https://checkra.in/releases/#all-downloads" target="_blank" rel="noopener">Checkra1n for Linux</a>，下载时注意你安卓设备的CPU架构。<br>如果你不知道你的设备架构是什么，可以在终端模拟器里输入<br><code>cat /proc/cpuinfo</code><br>输出的第一行信息即为CPU架构。</li>
-<li>把下载下来的bin文件放到/data分区中</li>
+<li>下载<a target="_blank" rel="noopener" href="https://checkra.in/releases/#all-downloads">Checkra1n for Linux</a>，下载时注意你安卓设备的CPU架构。<br>如果你不知道你的设备架构是什么，可以在终端模拟器里输入<br><code>cat /proc/cpuinfo</code><br>输出的第一行信息即为CPU架构。</li>
+<li>把下载下来的bin文件放到&#x2F;data分区中</li>
 <li>连接iOS设备和安卓手机</li>
 <li>打开终端模拟器，输入<br><code>su</code><br>获得root权限</li>
 <li>输入<br><code>lsusb</code><br>来检测是否能识别iOS设备，如果能，那么它会输出<br><code>05ac:12a8</code><br>如果不能，那么检查连接是否正常或者安卓设备是否支持OTG</li>
-<li>令iOS设备进入DFU模式，这是<a href="https://zhuanlan.zhihu.com/p/27271477" target="_blank" rel="noopener">进入DFU教程</a></li>
+<li>令iOS设备进入DFU模式，这是<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27271477">进入DFU教程</a></li>
 <li>再次重复步骤5，查看能否识别iOS设备，如果能，那么它会输出<br><code>05ac:1227</code></li>
 <li>终端模拟器输入<br><code>cd /data</code><br><code>./checkra1n -c</code><br>开始越狱，等待越狱完成</li>
 <li>完成越狱。Have fun!</li>

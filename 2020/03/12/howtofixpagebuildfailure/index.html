@@ -554,23 +554,23 @@
             <div id="articleContent">
                 <p>更新：</p>
 <p>靠，原来这个错误是GitHub自己抽风。。。害得我白折腾半天。。。</p>
-<div class="twitter-wrapper" style="left:50%;transform: translate(0px, 50%);"><blockquote class="twitter-tweet"><a href="https://twitter.com/githubstatus/status/1238125370953666562" target="_blank" rel="noopener"></a></blockquote></div><script async defer src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="twitter-wrapper" style="left:50%;transform: translate(0px, 50%);"><blockquote class="twitter-tweet"><a target="_blank" rel="noopener" href="https://twitter.com/githubstatus/status/1238125370953666562"></a></blockquote></div><script async defer src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p><img src="https://thumbs.gfycat.com/FatAthleticDaddylonglegs-size_restricted.gif" alt=""></p>
+<p><img src="https://thumbs.gfycat.com/FatAthleticDaddylonglegs-size_restricted.gif"></p>
 <hr>
-<p>今天写博的时候发现Github给我发了封邮件提示我Page build Failure<br><img src="https://i.loli.net/2020/03/12/Rqf8eziw1xtcXu4.jpg" alt=""><br>大意是：</p>
+<p>今天写博的时候发现Github给我发了封邮件提示我Page build Failure<br><img src="https://i.loli.net/2020/03/12/Rqf8eziw1xtcXu4.jpg"><br>大意是：</p>
 <p><em>master分支页面因为以下错误编译失败：</em></p>
 <p><em>无法编译页面，请稍后再试。</em></p>
 <p><em>关于Jekyll的故障排除信息请参考此网站：图中的链接</em></p>
 <p>虽然看懂了大意，但还是不懂为什么</p>
-<p><img src="https://img.moegirl.org/common/c/cc/%E4%BD%A0%E5%A6%88%E7%9A%84%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88.jpg" alt=""></p>
-<p>于是Google一下，找到了Github论坛上的一篇解决办法：<br><a href="https://github.community/t5/GitHub-Pages/GitHub-Pages-Builds-Fail/m-p/29184#M2000" target="_blank" rel="noopener">https://github.community/t5/GitHub-Pages/GitHub-Pages-Builds-Fail/m-p/29184#M2000</a></p>
+<p><img src="https://img.moegirl.org/common/c/cc/%E4%BD%A0%E5%A6%88%E7%9A%84%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88.jpg"></p>
+<p>于是Google一下，找到了Github论坛上的一篇解决办法：<br><a target="_blank" rel="noopener" href="https://github.community/t5/GitHub-Pages/GitHub-Pages-Builds-Fail/m-p/29184#M2000">https://github.community/t5/GitHub-Pages/GitHub-Pages-Builds-Fail/m-p/29184#M2000</a></p>
 <p>大意是：</p>
 <p><em>这是因为你的页面存在一些不受Jekyll支持的字符，如果你只想搭建基于HTML的静态网页的话，可以在你的repository根目录下建立一个名为</em><br><code>.nojekyll</code></p>
 <p><em>的文件来禁用Jekyll，从而解决GitHub pages报错的问题。</em></p>
 <p>基于HEXO的博客本来就是静态网页，而Jekyll是另一种动态博客，和我的博客没什么关系，于是我依葫芦画瓢试了一下。由于我用的是Windows系统，建立一个文本文档以后把它重命名成.nojekyll时居然提示我必须输文件名，不让我改。。。遂开powershell输入</p>
 <p><code>ren new.txt .nojekyll</code></p>
-<p>重命名成功，上传到我博客的repository的根目录下，重新部署。。。成功了！！！<br><img src="https://api.jikipedia.com/upload/a586237a263f2a7ee1474cbf50d7dc7a_scaled.jpg" alt=""></p>
+<p>重命名成功，上传到我博客的repository的根目录下，重新部署。。。成功了！！！<br><img src="https://api.jikipedia.com/upload/a586237a263f2a7ee1474cbf50d7dc7a_scaled.jpg"></p>
 
             </div>
             <hr/>

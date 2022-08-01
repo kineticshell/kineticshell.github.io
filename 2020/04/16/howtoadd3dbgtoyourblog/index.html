@@ -552,7 +552,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>之前偶然发现了这个网站：<a href="https://www.vantajs.com/" target="_blank" rel="noopener">Vanta.js</a>，发现里面的3D动态效果非常酷炫，于是就想把这东西安在自己的博客里。但是作为一名前端苦手，根本不知道怎么用它自带的代码，于是当时钻研了一晚上以后就放弃了。</p>
+                <p>之前偶然发现了这个网站：<a target="_blank" rel="noopener" href="https://www.vantajs.com/">Vanta.js</a>，发现里面的3D动态效果非常酷炫，于是就想把这东西安在自己的博客里。但是作为一名前端苦手，根本不知道怎么用它自带的代码，于是当时钻研了一晚上以后就放弃了。</p>
 <p>但是！过了将近半个月，我还是不死心，因为它的动态背景实在是太好看了，比这个matery主题自带的那三个动态背景强多了。最后，在Google的帮助下，我最终找到了添加这个背景的懒人代码。但是我复制粘贴以后发现只能显示在左上角一小块区域内，于是再次谷歌，一顿魔改加测试以后终于成功的把我的博客换上了3D背景，这感觉就像在新年的第一天换上新内裤一样清爽！</p>
 <p>下面是详细教程：</p>
 <h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>选择一个你喜欢的背景：</p>
@@ -563,7 +563,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.vantajs.com/dist/vanta.birds.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vantajs<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token property">z-index</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-VANTA<span class="token punctuation">.</span><span class="token function">BIRDS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+VANTA<span class="token punctuation">.</span><span class="token function">BIRDS</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   el<span class="token punctuation">:</span> <span class="token string">"#vantajs"</span><span class="token punctuation">,</span>
   <span class="token comment" spellcheck="true">/* more options (Uncomment) */</span>
   <span class="token comment" spellcheck="true">//birdSize: 1.50,</span>
@@ -573,11 +573,12 @@ VANTA<span class="token punctuation">.</span><span class="token function">BIRDS<
   <span class="token comment" spellcheck="true">//alignment: 33.00,</span>
   <span class="token comment" spellcheck="true">//cohesion: 33.00,</span>
   <span class="token comment" spellcheck="true">//quantity: 2.00</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
 VANTA<span class="token punctuation">.</span><span class="token function">BIRDS</span><span class="token punctuation">(</span><span class="token string">"#vantajs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+ 
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
 <ol start="2">
 <li>云朵：</li>
 </ol>
@@ -585,18 +586,19 @@ VANTA<span class="token punctuation">.</span><span class="token function">BIRDS<
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.vantajs.com/dist/vanta.clouds.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vantajs<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token property">z-index</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-
-VANTA<span class="token punctuation">.</span><span class="token function">CLOUDS</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ 
+VANTA<span class="token punctuation">.</span><span class="token function">CLOUDS</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   el<span class="token punctuation">:</span> <span class="token string">"#vantajs"</span><span class="token punctuation">,</span>
   mouseControls<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   touchControls<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   minHeight<span class="token punctuation">:</span> <span class="token number">200.00</span><span class="token punctuation">,</span>
   minWidth<span class="token punctuation">:</span> <span class="token number">200.00</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+ 
 VANTA<span class="token punctuation">.</span><span class="token function">CLOUDS</span><span class="token punctuation">(</span><span class="token string">"#vantajs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+ 
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
 <ol start="3">
 <li>3D网格球体：</li>
 </ol>
@@ -604,8 +606,8 @@ VANTA<span class="token punctuation">.</span><span class="token function">CLOUDS
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://www.vantajs.com/dist/vanta.globe.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vantajs<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">0</span>px<span class="token punctuation">;</span> <span class="token property">z-index</span><span class="token punctuation">:</span> -<span class="token number">1</span><span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100%</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-
-VANTA<span class="token punctuation">.</span><span class="token function">GLOBE</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+ 
+VANTA<span class="token punctuation">.</span><span class="token function">GLOBE</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
   el<span class="token punctuation">:</span> <span class="token string">"#vantajs"</span><span class="token punctuation">,</span>
   mouseControls<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
   touchControls<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -613,18 +615,20 @@ VANTA<span class="token punctuation">.</span><span class="token function">GLOBE<
   minWidth<span class="token punctuation">:</span> <span class="token number">200.00</span><span class="token punctuation">,</span>
   scale<span class="token punctuation">:</span> <span class="token number">1.00</span><span class="token punctuation">,</span>
   scaleMobile<span class="token punctuation">:</span> <span class="token number">1.00</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+ 
 VANTA<span class="token punctuation">.</span><span class="token function">GLOBE</span><span class="token punctuation">(</span><span class="token string">"#vantajs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+ 
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>其他背景请自行去Vanta.js自行选择喜欢的样式并替换以上代码的名称，注意要同时替换三处：script src中的js文件名称，script中的函数名称和包含的变量。</p>
-<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>找到你的博客主题的源文件（这里以matery主题为例），进入layout文件夹，找到layout.ejs。<strong>为防止出现错误，请先将其备份。</strong><br><img src="https://i.loli.net/2020/04/18/HZqIw2XdNkaLEG9.png" alt=""><br>打开，将上面的代码直接粘贴进去，注意必须粘贴到body标签内，否则会直接崩掉。<br>如果你是next主题或者是别的主题，原理也是一样的，找到你的博客主题的layout文件夹，找到其中的_layout.swig，然后Ctrl+C，Ctrl+V就完事了。</p>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>找到你的博客主题的源文件（这里以matery主题为例），进入layout文件夹，找到layout.ejs。<strong>为防止出现错误，请先将其备份。</strong><br><img src="https://i.loli.net/2020/04/18/HZqIw2XdNkaLEG9.png"><br>打开，将上面的代码直接粘贴进去，注意必须粘贴到body标签内，否则会直接崩掉。<br>如果你是next主题或者是别的主题，原理也是一样的，找到你的博客主题的layout文件夹，找到其中的_layout.swig，然后Ctrl+C，Ctrl+V就完事了。</p>
 <h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><p>打开git窗口，执行hexo g，hexo d即可。如果想先看看效果怎样可先用hexo s预览一下。如果生成页面的过程中报错或者页面完全崩坏，请将之前备份的layout文件恢复，并检查代码是否粘贴错误。</p>
-<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>Enjoy！<br><img src="https://i.loli.net/2020/04/18/OAoynMC3Y68QFHm.png" alt=""></p>
+<h2 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h2><p>Enjoy！<br><img src="https://i.loli.net/2020/04/18/OAoynMC3Y68QFHm.png"></p>
 <p>彩蛋：附赠一个能随机生成矫情段子的代码（我用在了首页的banner上）：</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://v1.hitokoto.cn/?c<span class="token punctuation">=</span>a&amp;c<span class="token punctuation">=</span>b&amp;c<span class="token punctuation">=</span>c&amp;c<span class="token punctuation">=</span>i&amp;encode<span class="token punctuation">=</span>js&amp;amp;select<span class="token punctuation">=</span>%23tantanpou<span class="token punctuation">"</span></span> <span class="token attr-name">defer</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preload<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tantanpou<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>tantanpou<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>用法自己琢磨，我就不再叨叨了。<br>打这些字累死了，睡觉去了。</p>
 
             </div>

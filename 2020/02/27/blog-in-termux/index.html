@@ -552,38 +552,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>第一步：去<a href="https://play.google.com/store/apps/details?id=com.termux&hl=zh" target="_blank" rel="noopener">Google Play</a>或<a href="https://www.coolapk.com/apk/com.termux" target="_blank" rel="noopener">酷安</a>下载termux</p>
-<p>第二步：注册一个GitHub账号并新建一个项目，详情可参考<a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">此教程</a></p>
+                <p>第一步：去<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.termux&hl=zh">Google Play</a>或<a target="_blank" rel="noopener" href="https://www.coolapk.com/apk/com.termux">酷安</a>下载termux</p>
+<p>第二步：注册一个GitHub账号并新建一个项目，详情可参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">此教程</a></p>
 <p>第三步：打开termux,执行</p>
 <pre><code>apt install nodejs -y
-apt install git -y</code></pre><p>如果网速太慢或者没有魔法上网条件时请自行搜索如何给termux添加国内源。</p>
+apt install git -y
+</code></pre>
+<p>如果网速太慢或者没有魔法上网条件时请自行搜索如何给termux添加国内源。</p>
 <p>第四步：打开手机文件管理器，新建一个文件夹用来存储博客文件，文件夹名称最好为英文</p>
 <p>第五步：打开termux，输入</p>
 <pre><code>cd /sdcard/你的文件夹名称
-npm i hexo-cli -g</code></pre><p>安装hexo，安装完成后，输入</p>
-<pre><code>hexo -v</code></pre><p>检查是否安装成功，若出现版本号，则可进行下一步</p>
+npm i hexo-cli -g
+</code></pre>
+<p>安装hexo，安装完成后，输入</p>
+<pre><code>hexo -v
+</code></pre>
+<p>检查是否安装成功，若出现版本号，则可进行下一步</p>
 <p>第六步：输入</p>
 <pre><code>hexo init
-npm install</code></pre><p>安装必要组件</p>
+npm install
+</code></pre>
+<p>安装必要组件</p>
 <p>第七步：测试是否正常，输入</p>
 <pre><code>hexo g
-hexo s</code></pre><p>等待执行完毕后，打开手机浏览器，在地址栏中输入</p>
-<pre><code>127.0.0.1:4000</code></pre><p>查看是否能显示<br><img src="https://cdn.yuguomin.com/images/Build-blog-hexp-base/hexo-server-page.png" alt=""><br>若能，则进行下一步</p>
+hexo s
+</code></pre>
+<p>等待执行完毕后，打开手机浏览器，在地址栏中输入</p>
+<pre><code>127.0.0.1:4000
+</code></pre>
+<p>查看是否能显示<br><img src="https://cdn.yuguomin.com/images/Build-blog-hexp-base/hexo-server-page.png"><br>若能，则进行下一步</p>
 <p>第八步：在termux中输入Ctrl+C终止本地服务器，输入</p>
 <pre><code>git config --global user.name &quot;你的GitHubID&quot;
-git config --global user.email &quot;你的GitHub绑定邮箱&quot;</code></pre><p>然后生成SSH key</p>
-<pre><code>ssh-keygen -t rsa -C &quot;你的GitHub绑定邮箱&quot;</code></pre><p>打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便。<br>在termux中输入</p>
-<pre><code>cat ~/.ssh/id_rsa.pub</code></pre><p>将输出的内容复制到框中，点击确定保存。<br>输入</p>
-<pre><code>ssh -T git@github.com</code></pre><p>如果出现你的用户名，那就成功了。</p>
+git config --global user.email &quot;你的GitHub绑定邮箱&quot;
+</code></pre>
+<p>然后生成SSH key</p>
+<pre><code>ssh-keygen -t rsa -C &quot;你的GitHub绑定邮箱&quot;
+</code></pre>
+<p>打开github，在头像下面点击settings，再点击SSH and GPG keys，新建一个SSH，名字随便。<br>在termux中输入</p>
+<pre><code>cat ~/.ssh/id_rsa.pub
+</code></pre>
+<p>将输出的内容复制到框中，点击确定保存。<br>输入</p>
+<pre><code>ssh -T git@github.com
+</code></pre>
+<p>如果出现你的用户名，那就成功了。</p>
 <p>第九步：打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。建议使用ES文件浏览器编辑本地文件。<br>修改最后一行的配置：</p>
 <pre><code>deploy:
    type: git
    repository: https://github.com/你的GitHub账户名/你刚刚新建的项目名
-   branch: master</code></pre><p>第十步：在termux中输入</p>
+   branch: master
+</code></pre>
+<p>第十步：在termux中输入</p>
 <pre><code>hexo clean
 hexo g
-hexo d</code></pre><p>完成以后可以访问你的GitHub pages链接，就能看到你的博客了。</p>
-<p>关于主题配置和文章发布可以参考<a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">此教程</a>，将其中提到的指令在termux/手机中操作即可</p>
+hexo d
+</code></pre>
+<p>完成以后可以访问你的GitHub pages链接，就能看到你的博客了。</p>
+<p>关于主题配置和文章发布可以参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">此教程</a>，将其中提到的指令在termux&#x2F;手机中操作即可</p>
 
             </div>
             <hr/>
@@ -1162,7 +1186,7 @@ hexo d</code></pre><p>完成以后可以访问你的GitHub pages链接，就能�
                         
                             本文用来收藏我看过并且觉得不错的SCP文档。本文只会收录那些我认为比较冷门但是非常有趣的SCP，那些知名的诸如2317，231，3001，3999之类的不会收录。
 本部SCP
-特斯拉死光SCP-2700概要：…一个无法遏制的连锁反应将会发生
+特斯拉死光SCP-2700概要：*…一个无法遏制的连锁反应将会发
                         
                     </div>
                     <div class="publish-info">

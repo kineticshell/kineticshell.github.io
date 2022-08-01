@@ -553,21 +553,21 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>之前买的斐讯K2路由器居然毫无征兆的崩了，重启+reset都没用，具体症状就是接电以后过一会就会死机，wifi信号和有线连接全部失效。。。导致我的局域网几乎所有设备全部瘫痪。。。没办法只能整一个新的了。</p>
-<p><img src="https://thumbs.gfycat.com/FatAthleticDaddylonglegs-size_restricted.gif" alt=""></p>
+<p><img src="https://thumbs.gfycat.com/FatAthleticDaddylonglegs-size_restricted.gif"></p>
 <p>于是我在二手群里又花50收了一个新的K2，发现这个路由器是原厂固件，功能少的一匹不说还会自动加广告，而且还不能用ShandowSocksR，这怎么能忍？因为之前淘宝买的K2是已经刷好华硕老毛子固件（奇怪的名字）的，因此拿来就能直接用，而这个就得我手动刷入第三方固件了。谷歌一通之后我发现了两种刷机方法：</p>
 <ol>
 <li>Breed刷机法：先刷入breed再通过breed刷入第三方固件。</li>
 <li>固件补丁法：直接刷入官方固件破解补丁然后利用自带的手动升级功能刷入第三方固件。</li>
 </ol>
-<h2 id="Breed刷机法"><a href="#Breed刷机法" class="headerlink" title="Breed刷机法"></a>Breed刷机法</h2><p>第一种方法是最常见的方法，也是适用性最广的方法，breed我的理解就是路由器版的TWRP（第三方REC），优点是适用性广，几乎所有智能路由器都能刷，不小心刷成砖以后方便救砖（路由器刷坏了我觉得应该叫塑料盒子更贴切一点）。缺点就是比起第二种方法要稍微麻烦一些，我个人建议非斐讯路由的玩家使用这种方法。<br>breed下载地址：<a href="https://www.right.com.cn/FORUM/thread-161906-1-1.html" target="_blank" rel="noopener">https://www.right.com.cn/FORUM/thread-161906-1-1.html</a><br>教程：<a href="https://www.cnblogs.com/xuliangxing/p/6486560.html" target="_blank" rel="noopener">https://www.cnblogs.com/xuliangxing/p/6486560.html</a><br><img src="https://i.loli.net/2020/04/28/4V8zZ2xwd6JN3on.png" alt=""></p>
-<h2 id="固件补丁法"><a href="#固件补丁法" class="headerlink" title="固件补丁法"></a>固件补丁法</h2><p>第二种方法仅适用于斐讯官方固件和路由，非斐讯玩家请绕道。。。<br>原理就是刷入一个破解补丁，解除斐讯官方固件对升级文件校验的限制，利用其手动升级功能来实现刷入第三方固件，用手机做类比的话就相当于把小米手机自带的rec破解了使其可以通过手动升级功能选择并刷入LineageOS。我本人由于是斐讯路由所以选择的是这个方法。<br>支持的版本列表：<br><img src="https://i.loli.net/2020/04/27/7AzcERUuQbZMf6d.png" alt=""><br>步骤（这里以刷入华硕老毛子固件为例）：</p>
+<h2 id="Breed刷机法"><a href="#Breed刷机法" class="headerlink" title="Breed刷机法"></a>Breed刷机法</h2><p>第一种方法是最常见的方法，也是适用性最广的方法，breed我的理解就是路由器版的TWRP（第三方REC），优点是适用性广，几乎所有智能路由器都能刷，不小心刷成砖以后方便救砖（路由器刷坏了我觉得应该叫塑料盒子更贴切一点）。缺点就是比起第二种方法要稍微麻烦一些，我个人建议非斐讯路由的玩家使用这种方法。<br>breed下载地址：<a target="_blank" rel="noopener" href="https://www.right.com.cn/FORUM/thread-161906-1-1.html">https://www.right.com.cn/FORUM/thread-161906-1-1.html</a><br>教程：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xuliangxing/p/6486560.html">https://www.cnblogs.com/xuliangxing/p/6486560.html</a><br><img src="https://i.loli.net/2020/04/28/4V8zZ2xwd6JN3on.png"></p>
+<h2 id="固件补丁法"><a href="#固件补丁法" class="headerlink" title="固件补丁法"></a>固件补丁法</h2><p>第二种方法仅适用于斐讯官方固件和路由，非斐讯玩家请绕道。。。<br>原理就是刷入一个破解补丁，解除斐讯官方固件对升级文件校验的限制，利用其手动升级功能来实现刷入第三方固件，用手机做类比的话就相当于把小米手机自带的rec破解了使其可以通过手动升级功能选择并刷入LineageOS。我本人由于是斐讯路由所以选择的是这个方法。<br>支持的版本列表：<br><img src="https://i.loli.net/2020/04/27/7AzcERUuQbZMf6d.png"><br>步骤（这里以刷入华硕老毛子固件为例）：</p>
 <ul>
 <li>第一步：将网线一头连接电脑另一头连接路由器的LAN口</li>
-<li>第二步：下载<a href="https://lanzous.com/ibzsw1c" target="_blank" rel="noopener">一键破解补丁</a>，解压并运行其中的“刷机.bat”（搬运自<a href="https://tbvv.net/posts/0101-breed.html" target="_blank" rel="noopener">https://tbvv.net/posts/0101-breed.html</a>)</li>
+<li>第二步：下载<a target="_blank" rel="noopener" href="https://lanzous.com/ibzsw1c">一键破解补丁</a>，解压并运行其中的“刷机.bat”（搬运自<a target="_blank" rel="noopener" href="https://tbvv.net/posts/0101-breed.html">https://tbvv.net/posts/0101-breed.html</a>)</li>
 <li>第三步：输入路由器的管理员ID和密码，默认都是admin</li>
 <li>第四步：刷好以后应该会直接进入路由器管理页面，若未能成功打开，请自行在浏览器中输入192.168.2.1，新密码为tbvv.net</li>
 <li>第五步：进入高级设置 —&gt; 系统设置 —&gt; 手动升级，选择符合你路由器版本的第三方固件上传并刷入。</li>
-<li>第六步：等待读条，若进度条100%后页面迟迟没有动作建议先检查WiFi列表中是否已有PDCN和PDCN_5G，如有，说明刷机已成功，默认密码为1234567890，连接成功后即可进入192.168.123.1配置你的固件<br><img src="https://i.loli.net/2020/04/28/j4nkdEpJyVH8iBM.jpg" alt=""></li>
+<li>第六步：等待读条，若进度条100%后页面迟迟没有动作建议先检查WiFi列表中是否已有PDCN和PDCN_5G，如有，说明刷机已成功，默认密码为1234567890，连接成功后即可进入192.168.123.1配置你的固件<br><img src="https://i.loli.net/2020/04/28/j4nkdEpJyVH8iBM.jpg"></li>
 </ul>
 
             </div>
@@ -1114,12 +1114,16 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
                     <a href="/tags/%E6%90%9E%E6%9C%BA/">
                         <span class="chip bg-color">搞机</span>
                     </a>
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/%E7%BE%8E%E5%8C%96/">
+                        <span class="chip bg-color">美化</span>
                     </a>
                     
                     <a href="/tags/%E5%86%85%E6%A0%B8%E8%B0%83%E6%A0%A1/">
@@ -1128,10 +1132,6 @@
                     
                     <a href="/tags/%E5%8A%A8%E6%80%81%E5%A3%81%E7%BA%B8/">
                         <span class="chip bg-color">动态壁纸</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BE%8E%E5%8C%96/">
-                        <span class="chip bg-color">美化</span>
                     </a>
                     
                 </div>

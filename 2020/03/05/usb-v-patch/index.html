@@ -553,12 +553,10 @@
 <li>检测是否有USB存储设备插入电脑:</li>
 </ol>
 <ul>
-<li>如果有，那么：<ul>
+<li>如果有，那么：</li>
 <li>复制自身到U盘根目录</li>
 <li>隐藏此设备目录下所有文件与文件夹</li>
 <li>在设备根目录创建恶意快捷方式</li>
-</ul>
-</li>
 </ul>
 <p>知道了它的原理，就不难预防了，因为这种病毒是基于Windows脚本宿主运行的，本体只是一串恶意代码，因此只要将脚本宿主给删掉或者改名即可达到永久预防的效果。<br>所以我根据这个原理编写了一段批处理程序：</p>
 <pre class=" language-bash"><code class="language-bash">@echo off
@@ -573,7 +571,8 @@ Icacls wscript.exe /c /grant users:f
 ren wscript.exe wscript1.exe
 ::重命名
 @echo 补丁安装完成！
-pause</code></pre>
+pause
+</code></pre>
 <p>此补丁可以永久防护基于脚本宿主的U盘病毒。<br>由于此病毒会隐藏文件而且还会创建一堆快捷方式让U盘变得乱七八糟，因此我又写了一个一键恢复隐藏文件的批处理程序：</p>
 <pre class=" language-bash"><code class="language-bash">@echo off
 taskkill /f /t /im wscript.exe
@@ -586,12 +585,13 @@ del %usb%<span class="token string">"Microsoft Word.WsF"</span>
 del %usb%*.lnk
 ::删除病毒创建的恶意快捷方式
 @echo 执行完毕，文件已恢复，病毒文件及恶意快捷方式已删除
-pause</code></pre>
+pause
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过编写这个脚本，我学会了如何利用cmd指令来提权+完全控制那些被拒绝访问的文件，再也不用手动右键属性等乱七八糟的方法来删掉权限不够的文件了<br>用法：</p>
 <p><code>takeown   /f 文件名</code><br>将指定文件所有者更改为当前用户</p>
-<p><code>Icacls 文件名 /c /grant users:f</code><br>获得指定文件的完全控制权<br>两条指令都必须在管理员模式下执行才能生效。<br><img src="https://api.jikipedia.com/upload/a586237a263f2a7ee1474cbf50d7dc7a_scaled.jpg" alt=""></p>
-<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a href="https://blog.51cto.com/wenzhongxiang/2349272" target="_blank" rel="noopener">Takeown、Cacls、Icacls-文件、文件夹夺权用法 - 51CTO</a></p>
-<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><p><a href="https://www.lanzous.com/i9z5whi" target="_blank" rel="noopener">usb-v patch.rar - 蓝奏云</a></p>
+<p><code>Icacls 文件名 /c /grant users:f</code><br>获得指定文件的完全控制权<br>两条指令都必须在管理员模式下执行才能生效。<br><img src="https://api.jikipedia.com/upload/a586237a263f2a7ee1474cbf50d7dc7a_scaled.jpg"></p>
+<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a target="_blank" rel="noopener" href="https://blog.51cto.com/wenzhongxiang/2349272">Takeown、Cacls、Icacls-文件、文件夹夺权用法 - 51CTO</a></p>
+<h2 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h2><p><a target="_blank" rel="noopener" href="https://www.lanzous.com/i9z5whi">usb-v patch.rar - 蓝奏云</a></p>
 
             </div>
             <hr/>
