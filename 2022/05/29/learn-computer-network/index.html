@@ -1395,7 +1395,133 @@
 </li>
 </ul>
 <h4 id="Socket编程-1"><a href="#Socket编程-1" class="headerlink" title="Socket编程"></a>Socket编程</h4><ul>
-<li>暂时跳过</li>
+<li>Socket API<ul>
+<li>面向Unix BSD</li>
+<li>面向TCP&#x2F;IP</li>
+<li>绝大部分OS都支持</li>
+<li>C&#x2F;S模型</li>
+<li>应用进程间通信的抽象机制</li>
+</ul>
+</li>
+<li>Winsock API<ul>
+<li>调用过程<ul>
+<li>WSAStartup<ul>
+<li>初始化Windows Socket API</li>
+</ul>
+</li>
+<li>应用程序</li>
+<li>WSACleanup<ul>
+<li>释放使用的Windows Sockets DLL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WSA相关代码<ul>
+<li>WSAStartup<ul>
+<li><code>int WSAStartup(WORD wVersionRequested, LPWSDATA IpWSAData);</code></li>
+</ul>
+</li>
+<li>WSACleanup<ul>
+<li><code>int WSACleanup(void);</code></li>
+</ul>
+</li>
+<li>创建Socket<ul>
+<li><code>sd = socket(protofamily, type, proto);</code></li>
+</ul>
+</li>
+<li>关闭Socket<ul>
+<li><code>int closesocket(SOCKET sd);</code></li>
+</ul>
+</li>
+<li>为Socket绑定本地端点地址<ul>
+<li><code>int bind(sd, localaddr, addrlen);</code></li>
+<li>地址通配符：INADDR_ANY</li>
+</ul>
+</li>
+<li>监听Socket<ul>
+<li><code>int listen(sd, queuesize);</code></li>
+<li>将Server端的streaming socket置为监听状态</li>
+</ul>
+</li>
+<li>连接Socket<ul>
+<li><code>connect(sd, saddr, saddrlen);</code></li>
+<li>仅用于Client端</li>
+</ul>
+</li>
+<li>从Streaming Socket中接受连接请求<ul>
+<li><code>newsocket = accept(sd, caddr, caddrlen);</code></li>
+<li>Only for TCP socket</li>
+<li>Server Only</li>
+</ul>
+</li>
+<li>发送到Socket<ul>
+<li><code>send(sd, *buf, len, flags);</code></li>
+<li><code>sendto(sd, *buf, len, flags, destaddr, addrlen);</code></li>
+</ul>
+</li>
+<li>从Socket接收<ul>
+<li><code>recv(sd, *buffer, len, flags);</code></li>
+<li><code>recvfrom(sd, *buf, len, flags, senderaddr, saddrlen);</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网络字节顺序<ul>
+<li>TCP&#x2F;IP定义的协议头中的二进制数字</li>
+<li>需要专门的函数将网络字节顺序与本地字节顺序互相转换<ul>
+<li><code>htons</code>：本地转网络16</li>
+<li><code>ntohs</code>：网络转本地16</li>
+<li><code>htonl</code>：本地转网络32</li>
+<li><code>ntohl</code>：网络转本地32</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Socket调用流程<ul>
+<li>Server<ul>
+<li>WSAStartup</li>
+<li>s&#x3D;socket()</li>
+<li>bind(s)</li>
+<li>listen(s)</li>
+<li>ns&#x3D;accept(s)</li>
+<li>recv(ns)</li>
+<li>send(ns)</li>
+<li>closesocket(ns)</li>
+</ul>
+</li>
+<li>Client<ul>
+<li>WSASetup</li>
+<li>s&#x3D;socket()</li>
+<li>connect(s)</li>
+<li>send(s)</li>
+<li>recv(s)</li>
+<li>close(s)</li>
+<li>WSACleanup</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>解析服务器IP<ul>
+<li>点分十进制IP转32位IP<ul>
+<li><code>inet_addr();</code></li>
+</ul>
+</li>
+<li>域名转IP地址<ul>
+<li><code>gethhostbyname();</code></li>
+</ul>
+</li>
+<li>解析端口号<ul>
+<li><code>getservbyname();</code></li>
+</ul>
+</li>
+<li>解析协议号<ul>
+<li><code>getprobbyname();</code></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="第三章：传输层"><a href="#第三章：传输层" class="headerlink" title="第三章：传输层"></a>第三章：传输层</h2><h3 id="传输层协议"><a href="#传输层协议" class="headerlink" title="传输层协议"></a>传输层协议</h3><ul>
 <li>为不同host上的进程提供了逻辑通信机制</li>
@@ -1461,6 +1587,21 @@
 <li>实现简单，无需维护</li>
 <li>头部开销少</li>
 <li>无拥塞控制</li>
+</ul>
+</li>
+<li>主要应用<ul>
+<li>流媒体</li>
+<li>DNS</li>
+<li>SNMP</li>
+</ul>
+</li>
+<li>使UDP上实现可靠数据传输<ul>
+<li>应用层上增加可靠性机制</li>
+<li>应用特定的错误恢复机制</li>
+</ul>
+</li>
+<li>UDP校验和<ul>
+<li>检验UDP传输错误</li>
 </ul>
 </li>
 </ul>
@@ -1979,7 +2120,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            六月主要
+                            六月主线任务
 雅思词汇学到3000+ 已完成
 严肃阅读：
 《只是为了好玩：Linux之父Linus自传》 已完成
@@ -1987,7 +2128,7 @@
 
 计算机网络至少学完传输层章节 未完成，学到了网络应用章节
 数据结构至少学完栈和队列章节 已完成
-至少背完十篇雅思写作范文 未完
+至少背完十篇雅思写作范文 
                         
                     </div>
                     <div class="publish-info">
