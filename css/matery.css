@@ -45,6 +45,7 @@ body {
     margin: 0;
     color: #5B5E50;
     font-family:'VonwaonBitmap 16px', sans-serif;
+    filter:saturate(0);
 }
 
 h1 {
