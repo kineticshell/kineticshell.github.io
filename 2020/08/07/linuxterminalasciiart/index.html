@@ -552,7 +552,22 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>(2021-1-24更新）<br>其实也没那么复杂，只需要运行<br><code>sudo apt install neofetch</code><br>等待安装完成后在~&#x2F;.bashrc里添加neofetch即可</p>
+                <p>引流用：<br>Linux美化；终端美化；neofetch 用法；ascii 艺术；Linux Terminal；</p>
+<p>(2021-1-24更新）<br>其实也没那么复杂，只需要运行</p>
+<pre><code>sudo apt install neofetch
+</code></pre>
+<p>等待安装完成后在~&#x2F;.bashrc里添加neofetch即可</p>
+<p>其中让neofetch自定义发行版的ascii艺术可以通过向<code>~/.bashrc</code>或<code>~/.zshrc</code>中添加</p>
+<pre><code>neofetch --ascii_distro &lt;distro_name&gt;
+</code></pre>
+<p>来实现，<code>&lt;distro name&gt;</code>可通过输入发行版名称来修改</p>
+<p>而添加自定义ascii艺术则可通过</p>
+<pre><code>neofetch --ascii &lt;ascii_file_location&gt; --ascii_colors &lt;xterm_256_color&gt; --colors &lt;xterm_256_color&gt;
+</code></pre>
+<p>实现，其中<code>&lt;ascii_file_location&gt;</code>是你的ascii艺术文件位置，最好为txt文本。ascii文件中需要额外添加<code>&#123;$c1&#125;</code>,<code>&#123;c2&#125;</code>等来标注ascii艺术的颜色。颜色请参考xterm256色码来按顺序放在<code>ascii_colors</code>和<code>colors</code>后面。<code>ascii_colors</code>参数代表ascii艺术的颜色，<code>colors</code>代表neofetch中各个信息模块的颜色。</p>
+<p>我的美化成果：<br><img src="https://tc.erji.ga/file/c9a120e6cab3eba183335.png"><br>我所使用的命令：</p>
+<pre><code>neofetch --ascii &quot;$HOME/ascii/crewmate.txt&quot; --ascii_colors 196 39 --colors 196 231 231 196 231 231 | sed &quot;s/Manjaro Linux/AmogOS/g; s/MANJARO/SUSSY/g; s/manjaro/amogos/g&quot;
+</code></pre>
 <hr>
 <p>先上效果图：<br><img src="https://i.loli.net/2020/08/07/HfgaoPYRqCX82NS.png"><br>之前逛r&#x2F;unixporn的时候看到各种大佬秀自己炫酷的终端时候手痒痒想自己也整一个，于是自己搜了下教程，最后决定还是用最简单的编辑~&#x2F;.bashrc的方法来添加启动文字</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>.bashrc是一个Linux隐藏配置文件，位于&#x2F;home&#x2F;username目录下，作用就是在启动终端时执行其中的代码。将问候语用echo指令添加到此文件中即可实现启动问候语和ascii字符画</p>
